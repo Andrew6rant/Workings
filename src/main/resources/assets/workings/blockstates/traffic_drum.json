@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "workings:block/traffic_drum" },
+    "facing=east":  { "model": "workings:block/traffic_drum", "y":  90},
+    "facing=south": { "model": "workings:block/traffic_drum", "y": 180 },
+    "facing=west":  { "model": "workings:block/traffic_drum", "y": 270 }
+  }
+}

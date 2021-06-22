@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "workings:block/traffic_light_auto" },
+    "facing=east":  { "model": "workings:block/traffic_light_auto", "y":  90},
+    "facing=south": { "model": "workings:block/traffic_light_auto", "y": 180 },
+    "facing=west":  { "model": "workings:block/traffic_light_auto", "y": 270 }
+  }
+}

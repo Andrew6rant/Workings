@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "second=false,third=false,fourth=false": {"model": "workings:block/pallet"},
+    "second=true,third=false,fourth=false": {"model": "workings:block/pallet_2"},
+    "second=true,third=true,fourth=false": {"model": "workings:block/pallet_3"},
+    "second=true,third=true,fourth=true": {"model": "workings:block/pallet_4"}
+  }
+}

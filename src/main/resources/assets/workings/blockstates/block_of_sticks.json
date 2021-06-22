@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "workings:block/block_of_sticks_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "workings:block/block_of_sticks"
+    },
+    "axis=z": {
+      "model": "workings:block/block_of_sticks_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "workings:block/asphalt"
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 90
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 180
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 270
+      }
+    ]
+  }
+}

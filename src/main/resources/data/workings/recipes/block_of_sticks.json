@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "//",
+    "//"
+  ],
+  "key": {
+    "/": {
+      "item": "workings:bundle_of_sticks"
+    }
+  },
+  "result": {
+    "item": "workings:block_of_sticks",
+    "count": 1
+  }
+}
