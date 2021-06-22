@@ -2,5 +2,11 @@
   "item.workings.bundle_of_sticks": "Bundle of Sticks",
   "block.workings.block_of_sticks": "Block of Sticks",
   "block.workings.pavement": "Pavement",
-  "block.workings.asphalt": "Asphalt"
+  "block.workings.asphalt": "Asphalt",
+  "block.workings.pallet": "Pallet",
+  "block.workings.jersey_wall": "Jersey Wall",
+  "block.workings.highway_wall": "Highway Wall",
+  "block.workings.traffic_pole": "Traffic Pole",
+  "block.workings.traffic_light_auto": "Automatic Traffic Light",
+  "block.workings.traffic_drum": "Traffic Drum"
 }
