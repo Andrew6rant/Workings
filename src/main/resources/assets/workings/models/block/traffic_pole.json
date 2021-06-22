@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "workings:block/tall_cone",
-		"particle": "workings:block/tall_cone"
+		"0": "workings:block/traffic_pole",
+		"particle": "workings:block/traffic_pole"
 	},
 	"elements": [
 		{

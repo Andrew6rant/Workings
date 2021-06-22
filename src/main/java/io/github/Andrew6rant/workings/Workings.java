@@ -31,7 +31,7 @@ public class Workings implements ModInitializer {
 	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-	public static final ConeBlock TALL_CONE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
+	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final TrafficBlock TRAFFIC_LIGHT_AUTO = new TrafficBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 
@@ -148,8 +148,8 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "jersey_wall"), new BlockItem(JERSEY_WALL, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","highway_wall"), HIGHWAY_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "highway_wall"), new BlockItem(HIGHWAY_WALL, new FabricItemSettings().group(ItemGroup.MISC)));
-		Registry.register(Registry.BLOCK, new Identifier("workings","tall_cone"), TALL_CONE);
-		Registry.register(Registry.ITEM, new Identifier("workings", "tall_cone"), new BlockItem(TALL_CONE, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_pole"), TRAFFIC_POLE);
+		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_pole"), new BlockItem(TRAFFIC_POLE, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light_auto"), TRAFFIC_LIGHT_AUTO);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light_auto"), new BlockItem(TRAFFIC_LIGHT_AUTO, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_drum"), TRAFFIC_DRUM);
