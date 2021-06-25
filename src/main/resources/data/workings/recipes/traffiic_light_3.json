@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I",
+    "YI",
+    "GI"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:red_candle"
+    },
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "Y": {
+      "item": "minecraft:yellow_candle"
+    },
+    "G": {
+      "item": "minecraft:green_candle"
+    }
+  },
+  "result": {
+    "item": "workings:traffic_light",
+    "count": 1
+  }
+}

@@ -8,5 +8,6 @@
   "block.workings.highway_wall": "Highway Wall",
   "block.workings.traffic_pole": "Traffic Pole",
   "block.workings.traffic_light_auto": "Automatic Traffic Light",
+  "block.workings.traffic_light": "Traffic Light",
   "block.workings.traffic_drum": "Traffic Drum"
 }

@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.mixin.object.builder.AbstractBlockSettingsAccessor;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -13,6 +14,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.SignType;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
@@ -32,8 +34,26 @@ public class Workings implements ModInitializer {
 	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
-	public static final TrafficBlock TRAFFIC_LIGHT_AUTO = new TrafficBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
+	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
+	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
+
+	public static class TrafficLight extends RedstoneLampBlock {
+		public TrafficLight(Settings settings) {
+			super(settings);
+		}
+		@Override
+		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+			stateManager.add(Properties.HORIZONTAL_FACING);
+			stateManager.add(Properties.LIT);
+		}
+		public BlockState getPlacementState(ItemPlacementContext ctx){
+			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
+		}
+		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
+			return VoxelShapes.cuboid(0.3125f, 0f, 0.3125f, 0.6875, 1f, 0.6875);
+		}
+	}
 
 	public static class DrumBlock extends Block {
 		public DrumBlock(Settings settings) {
@@ -64,22 +84,6 @@ public class Workings implements ModInitializer {
 		}
 		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
 			return VoxelShapes.cuboid(0.40625f, 0f, 0.40625f, 0.59375f, 1.25f, 0.59375f);
-		}
-	}
-
-	public static class TrafficBlock extends Block {
-		public TrafficBlock(Settings settings) {
-			super(Settings.of(Material.DECORATION).nonOpaque());
-		}
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			return VoxelShapes.cuboid(0.3125f, 0f, 0.3125f, 0.6875, 1f, 0.6875);
 		}
 	}
 
@@ -154,5 +158,7 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light_auto"), new BlockItem(TRAFFIC_LIGHT_AUTO, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_drum"), TRAFFIC_DRUM);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_drum"), new BlockItem(TRAFFIC_DRUM, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light"), TRAFFIC_LIGHT);
+		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light"), new BlockItem(TRAFFIC_LIGHT, new FabricItemSettings().group(ItemGroup.MISC)));
 	}
 }

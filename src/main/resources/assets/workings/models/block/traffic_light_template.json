@@ -1,7 +1,8 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Andrew Grant, Made with Blockbench",
+	"ambientocclusion": false,
 	"textures": {
-		"particle": "workings:block/traffic_light"
+		"particle": "workings:block/traffic_light_static"
 	},
 	"elements": [
 		{
