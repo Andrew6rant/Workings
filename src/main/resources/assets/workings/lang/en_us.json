@@ -1,8 +1,8 @@
 {
   "item.workings.bundle_of_sticks": "Bundle of Sticks",
   "block.workings.block_of_sticks": "Block of Sticks",
-  "block.workings.pavement": "Pavement",
-  "block.workings.asphalt": "Asphalt",
+  "block.workings.pavement": "Pavement [Developer]",
+  "block.workings.asphalt": "Asphalt [Developer]",
   "block.workings.pallet": "Pallet",
   "block.workings.jersey_wall": "Jersey Wall",
   "block.workings.highway_wall": "Highway Wall",
