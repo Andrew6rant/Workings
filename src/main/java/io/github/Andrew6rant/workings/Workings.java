@@ -41,6 +41,10 @@ public class Workings implements ModInitializer {
 	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final LargeRodBlock IRON_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final PipeBlock BLOCK_OF_COPPER_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final SmallRodBlock COPPER_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 
 	public static class SmallRodBlock extends LightningRodBlock {
 		public SmallRodBlock(AbstractBlock.Settings settings) {
@@ -240,5 +244,13 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "iron_pipe"), new BlockItem(IRON_PIPE, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe_large"), IRON_PIPE_LARGE);
 		Registry.register(Registry.ITEM, new Identifier("workings", "iron_pipe_large"), new BlockItem(IRON_PIPE_LARGE, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","block_of_copper_pipes"), BLOCK_OF_COPPER_PIPES);
+		Registry.register(Registry.ITEM, new Identifier("workings", "block_of_copper_pipes"), new BlockItem(BLOCK_OF_COPPER_PIPES, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","copper_pipe_small"), COPPER_PIPE_SMALL);
+		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe_small"), new BlockItem(COPPER_PIPE_SMALL, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","copper_pipe"), COPPER_PIPE);
+		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe"), new BlockItem(COPPER_PIPE, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","copper_pipe_large"), COPPER_PIPE_LARGE);
+		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe_large"), new BlockItem(COPPER_PIPE_LARGE, new FabricItemSettings().group(ItemGroup.MISC)));
 	}
 }
