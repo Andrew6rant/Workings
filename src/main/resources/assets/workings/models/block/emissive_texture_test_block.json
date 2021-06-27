@@ -1,0 +1,35 @@
+{
+  "parent": "jmx:block/2/jmx_cube_all",
+  "textures": {
+    "all": "workings:block/emissive_texture_test_block"
+  },
+  "jmx": {
+    "textures": {
+      "jmx_tex_particle": "workings:block/emissive_texture_test_block",
+      "layered_textures": [
+        { "jmx_tex_all": "jmx:block/emissive_texture_test_block_mask" },
+        { "jmx_tex_all": "jmx:block/emissive_texture_test_block_overlay" }
+      ]
+    },
+    "materials": {
+      "jmx_mat_all": {
+        "layers": [
+          { "layer": "cutout_mipped" },
+          { "layer": "cutout_mipped", "emissive": true, "ambient_occlusion": false, "diffuse": false }
+        ]
+      }
+    }
+  },
+  "frex": {
+    "textures": {
+      "jmx_tex_particle": "workings:block/emissive_texture_test_block",
+      "layered_textures": [
+        { "jmx_tex_all": "jmx:block/emissive_texture_test_block_shader" },
+        { "jmx_tex_all": null }
+      ]
+    },
+    "materials": {
+      "jmx_mat_all": { "preset": "jmx:redstone" }
+    }
+  }
+}

@@ -15,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -32,13 +33,84 @@ public class Workings implements ModInitializer {
 	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
-	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
+	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
-	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).luminance(15));
+	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true));
+	public static final Block EMISSIVE_TEXTURE_TEST_BLOCK = new Block(FabricBlockSettings.of(Material.DECORATION).strength(2.0f).luminance(15).emissiveLighting((state, world, pos) -> true));
+	public static final PipeBlock BLOCK_OF_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final LargeRodBlock IRON_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+
+	public static class SmallRodBlock extends LightningRodBlock {
+		public SmallRodBlock(AbstractBlock.Settings settings) {
+			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
+		}
+		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
+			Direction dir = blockState.get(FACING);
+			return switch (dir) {
+				case UP, DOWN -> VoxelShapes.cuboid(0.40625f, 0f, 0.40625f, 0.59375f, 1f, 0.59375f);
+				case NORTH, SOUTH -> VoxelShapes.cuboid(0.40625f, 0.40625f, 0f, 0.59375f, 0.59375f, 1f);
+				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.40625f, 0.40625f, 1f, 0.59375f, 0.59375f);
+				default -> VoxelShapes.fullCube();
+			};
+		}
+	}
+	public static class MidRodBlock extends LightningRodBlock {
+		public MidRodBlock(AbstractBlock.Settings settings) {
+			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
+		}
+		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
+			Direction dir = blockState.get(FACING);
+			return switch (dir) {
+				case UP, DOWN -> VoxelShapes.cuboid(0.28125f, 0f, 0.28125f, 0.71875f, 1f, 0.71875f);
+				case NORTH, SOUTH -> VoxelShapes.cuboid(0.28125f, 0.28125f, 0f, 0.71875f, 0.71875f, 1f);
+				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.28125f, 0.28125f, 1f, 0.71875f, 0.71875f);
+				default -> VoxelShapes.fullCube();
+			};
+		}
+	}
+	public static class LargeRodBlock extends LightningRodBlock {
+		public LargeRodBlock(AbstractBlock.Settings settings) {
+			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
+		}
+		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
+			Direction dir = blockState.get(FACING);
+			return switch (dir) {
+				case UP, DOWN -> VoxelShapes.cuboid(0.21875f, 0f, 0.21875f, 0.78125f, 1f, 0.78125f);
+				case NORTH, SOUTH -> VoxelShapes.cuboid(0.21875f, 0.21875f, 0f, 0.78125f, 0.78125f, 1f);
+				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.21875f, 0.21875f, 1f, 0.78125f, 0.78125f);
+				default -> VoxelShapes.fullCube();
+			};
+		}
+	}
+
+	public static class PipeBlock extends HorizontalFacingBlock {
+		public PipeBlock(Settings settings) {
+			super(Settings.of(Material.METAL).nonOpaque());
+		}
+		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+			stateManager.add(Properties.HORIZONTAL_FACING);
+		}
+		public BlockState getPlacementState(ItemPlacementContext ctx){
+			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
+		}
+		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
+			Direction dir = blockState.get(FACING);
+			return switch (dir) {
+				case NORTH -> VoxelShapes.cuboid(-0.0625f, -0.0625f, 0f, 1f, 1f, 1f);
+				case SOUTH -> VoxelShapes.cuboid(0f, -0.0625f, 0f, 1.0625f, 1f, 1f);
+				case EAST -> VoxelShapes.cuboid(0f, -0.0625f, -0.0625f, 1f, 1f, 1f);
+				case WEST -> VoxelShapes.cuboid(0f, -0.0625f, 0f, 1f, 1f, 1.0625f);
+				default -> VoxelShapes.fullCube();
+			};
+
+		}
+	}
 
 	public static class TrafficLight extends RedstoneLampBlock {
 		public TrafficLight(Settings settings) {
-			super(settings);
+			super(settings.emissiveLighting((state, world, pos) -> true));
 		}
 		@Override
 		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
@@ -49,7 +121,7 @@ public class Workings implements ModInitializer {
 			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
 		}
 		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			return VoxelShapes.cuboid(0.3125f, 0f, 0.3125f, 0.6875, 1f, 0.6875);
+			return VoxelShapes.cuboid(0.3125f, 0f, 0.3125f, 0.6875f, 1f, 0.6875f);
 		}
 	}
 
@@ -158,5 +230,15 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_drum"), new BlockItem(TRAFFIC_DRUM, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light"), TRAFFIC_LIGHT);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light"), new BlockItem(TRAFFIC_LIGHT, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","emissive_texture_test_block"), EMISSIVE_TEXTURE_TEST_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("workings", "emissive_texture_test_block"), new BlockItem(EMISSIVE_TEXTURE_TEST_BLOCK, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","block_of_pipes"), BLOCK_OF_PIPES);
+		Registry.register(Registry.ITEM, new Identifier("workings", "block_of_pipes"), new BlockItem(BLOCK_OF_PIPES, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe_small"), IRON_PIPE_SMALL);
+		Registry.register(Registry.ITEM, new Identifier("workings", "iron_pipe_small"), new BlockItem(IRON_PIPE_SMALL, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe"), IRON_PIPE);
+		Registry.register(Registry.ITEM, new Identifier("workings", "iron_pipe"), new BlockItem(IRON_PIPE, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe_large"), IRON_PIPE_LARGE);
+		Registry.register(Registry.ITEM, new Identifier("workings", "iron_pipe_large"), new BlockItem(IRON_PIPE_LARGE, new FabricItemSettings().group(ItemGroup.MISC)));
 	}
 }

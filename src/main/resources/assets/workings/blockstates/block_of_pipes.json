@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "workings:block/block_of_pipes" },
+    "facing=east":  { "model": "workings:block/block_of_pipes", "y":  90},
+    "facing=south": { "model": "workings:block/block_of_pipes", "y": 180 },
+    "facing=west":  { "model": "workings:block/block_of_pipes", "y": 270 }
+  }
+}
