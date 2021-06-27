@@ -1,38 +1,9 @@
 {
   "credit": "Andrew Grant, Made with Blockbench",
-  "parent": "jmx:block/2/jmx_cube_all",
+  "parent": "block/block",
   "textures": {
     "particle": "workings:block/traffic_light_auto",
     "0": "workings:block/traffic_light_auto"
-  },
-  "jmx": {
-    "textures": {
-      "jmx_tex_particle": "workings:block/traffic_light_auto",
-      "layered_textures": [
-        { "jmx_tex_all": "jmx:block/traffic_light_auto_mask" },
-        { "jmx_tex_all": "jmx:block/traffic_light_auto_emissive" }
-      ]
-    },
-    "materials": {
-      "jmx_mat_all": {
-        "layers": [
-          { "layer": "cutout_mipped" },
-          { "layer": "cutout_mipped", "emissive": true, "ambient_occlusion": false, "diffuse": false }
-        ]
-      }
-    }
-  },
-  "frex": {
-    "textures": {
-      "jmx_tex_particle": "workings:block/traffic_light_auto",
-      "layered_textures": [
-        { "jmx_tex_all": "jmx:block/traffic_light_auto_shader" },
-        { "jmx_tex_all": null }
-      ]
-    },
-    "materials": {
-      "jmx_mat_all": { "preset": "jmx:redstone" }
-    }
   },
   "elements": [
     {

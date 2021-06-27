@@ -1,5 +1,6 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Andrew Grant, Made with Blockbench",
+	"parent": "block/block",
 	"textures": {
 		"0": "workings:block/traffic_pole",
 		"particle": "workings:block/traffic_pole"

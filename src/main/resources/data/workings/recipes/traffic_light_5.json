@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "workings:traffic_light_auto"
+    },
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "result": {
+    "item": "workings:traffic_light",
+    "count": 1
+  }
+}

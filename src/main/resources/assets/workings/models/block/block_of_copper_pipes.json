@@ -1,5 +1,6 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Andrew Grant, Made with Blockbench",
+	"parent": "block/block",
 	"textures": {
 		"1": "workings:block/block_of_pipes_copper_side",
 		"2": "workings:block/block_of_copper_pipes",

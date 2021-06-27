@@ -28,15 +28,13 @@ public class Workings implements ModInitializer {
 	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
 	public static final Item BUNDLE_OF_STICKS = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 	public static final Pallet PALLET = new Pallet(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
-	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
-	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
-	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true));
-	public static final Block EMISSIVE_TEXTURE_TEST_BLOCK = new Block(FabricBlockSettings.of(Material.DECORATION).strength(2.0f).luminance(15).emissiveLighting((state, world, pos) -> true));
+	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
+	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
+	//public static final Block EMISSIVE_TEXTURE_TEST_BLOCK = new Block(FabricBlockSettings.of(Material.DECORATION).strength(2.0f).luminance(15).emissiveLighting((state, world, pos) -> true));
 	public static final PipeBlock BLOCK_OF_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
@@ -45,6 +43,8 @@ public class Workings implements ModInitializer {
 	public static final SmallRodBlock COPPER_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
+	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 
 	public static class SmallRodBlock extends LightningRodBlock {
 		public SmallRodBlock(AbstractBlock.Settings settings) {
@@ -218,24 +218,20 @@ public class Workings implements ModInitializer {
 		FuelRegistry.INSTANCE.add(BLOCK_OF_STICKS, 3000);
 		Registry.register(Registry.BLOCK, new Identifier("workings", "pallet"), PALLET);
 		Registry.register(Registry.ITEM, new Identifier("workings", "pallet"), new BlockItem(PALLET, new FabricItemSettings().group(ItemGroup.MISC)));
-		Registry.register(Registry.BLOCK, new Identifier("workings", "pavement"), PAVEMENT);
-		Registry.register(Registry.ITEM, new Identifier("workings", "pavement"), new BlockItem(PAVEMENT, new FabricItemSettings().group(ItemGroup.MISC)));
-		Registry.register(Registry.BLOCK, new Identifier("workings", "asphalt"), ASPHALT);
-		Registry.register(Registry.ITEM, new Identifier("workings", "asphalt"), new BlockItem(ASPHALT, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","jersey_wall"), JERSEY_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "jersey_wall"), new BlockItem(JERSEY_WALL, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","highway_wall"), HIGHWAY_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "highway_wall"), new BlockItem(HIGHWAY_WALL, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_pole"), TRAFFIC_POLE);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_pole"), new BlockItem(TRAFFIC_POLE, new FabricItemSettings().group(ItemGroup.MISC)));
-		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light_auto"), TRAFFIC_LIGHT_AUTO);
-		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light_auto"), new BlockItem(TRAFFIC_LIGHT_AUTO, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_drum"), TRAFFIC_DRUM);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_drum"), new BlockItem(TRAFFIC_DRUM, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light"), TRAFFIC_LIGHT);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light"), new BlockItem(TRAFFIC_LIGHT, new FabricItemSettings().group(ItemGroup.MISC)));
-		Registry.register(Registry.BLOCK, new Identifier("workings","emissive_texture_test_block"), EMISSIVE_TEXTURE_TEST_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("workings", "emissive_texture_test_block"), new BlockItem(EMISSIVE_TEXTURE_TEST_BLOCK, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light_auto"), TRAFFIC_LIGHT_AUTO);
+		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light_auto"), new BlockItem(TRAFFIC_LIGHT_AUTO, new FabricItemSettings().group(ItemGroup.MISC)));
+		//Registry.register(Registry.BLOCK, new Identifier("workings","emissive_texture_test_block"), EMISSIVE_TEXTURE_TEST_BLOCK);
+		//Registry.register(Registry.ITEM, new Identifier("workings", "emissive_texture_test_block"), new BlockItem(EMISSIVE_TEXTURE_TEST_BLOCK, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","block_of_pipes"), BLOCK_OF_PIPES);
 		Registry.register(Registry.ITEM, new Identifier("workings", "block_of_pipes"), new BlockItem(BLOCK_OF_PIPES, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe_small"), IRON_PIPE_SMALL);
@@ -252,5 +248,10 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe"), new BlockItem(COPPER_PIPE, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","copper_pipe_large"), COPPER_PIPE_LARGE);
 		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe_large"), new BlockItem(COPPER_PIPE_LARGE, new FabricItemSettings().group(ItemGroup.MISC)));
+
+		Registry.register(Registry.BLOCK, new Identifier("workings", "pavement"), PAVEMENT);
+		Registry.register(Registry.ITEM, new Identifier("workings", "pavement"), new BlockItem(PAVEMENT, new FabricItemSettings().group(ItemGroup.MISC)));
+		Registry.register(Registry.BLOCK, new Identifier("workings", "asphalt"), ASPHALT);
+		Registry.register(Registry.ITEM, new Identifier("workings", "asphalt"), new BlockItem(ASPHALT, new FabricItemSettings().group(ItemGroup.MISC)));
 	}
 }

@@ -9,5 +9,13 @@
   "block.workings.traffic_pole": "Traffic Pole",
   "block.workings.traffic_light_auto": "Automatic Traffic Light",
   "block.workings.traffic_light": "Traffic Light",
-  "block.workings.traffic_drum": "Traffic Drum"
+  "block.workings.traffic_drum": "Traffic Drum",
+  "block.workings.block_of_pipes": "Block of Pipes",
+  "block.workings.iron_pipe": "Iron Pipe",
+  "block.workings.iron_pipe_small": "Small Iron Pipe",
+  "block.workings.iron_pipe_large": "Large Iron Pipe",
+  "block.workings.block_of_copper_pipes": "Block of Copper Pipes",
+  "block.workings.copper_pipe": "Copper Pipe",
+  "block.workings.copper_pipe_small": "Small Copper Pipe",
+  "block.workings.copper_pipe_large": "Large Copper Pipe"
 }
