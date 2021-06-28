@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "workings:block/stop_sign" },
+    "facing=east":  { "model": "workings:block/stop_sign", "y":  90},
+    "facing=south": { "model": "workings:block/stop_sign", "y": 180 },
+    "facing=west":  { "model": "workings:block/stop_sign", "y": 270 }
+  }
+}

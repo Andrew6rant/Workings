@@ -17,5 +17,7 @@
   "block.workings.block_of_copper_pipes": "Block of Copper Pipes",
   "block.workings.copper_pipe": "Copper Pipe",
   "block.workings.copper_pipe_small": "Small Copper Pipe",
-  "block.workings.copper_pipe_large": "Large Copper Pipe"
+  "block.workings.copper_pipe_large": "Large Copper Pipe",
+  "item.workings.pipe.tooltip": "Can be used as a lightning rod",
+  "itemGroup.workings.general": "Workings Mod"
 }
