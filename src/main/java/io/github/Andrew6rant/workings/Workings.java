@@ -53,6 +53,9 @@ public class Workings implements ModInitializer {
 	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock STOP_SIGN = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final WallSignBlock STOP_SIGN_WALL = new WallSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final RoadSignBlock DIAMOND_SIGN_CROSS = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final RoadSignBlock DIAMOND_SIGN_SHOVEL = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final RoadSignBlock DIAMOND_SIGN_FLAG = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	//public static final ConnectingBlock
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
@@ -310,6 +313,13 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "stop_sign"), new BlockItem(STOP_SIGN, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","stop_sign_wall"), STOP_SIGN_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "stop_sign_wall"), new BlockItem(STOP_SIGN_WALL, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+
+		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_shovel"), DIAMOND_SIGN_SHOVEL);
+		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_shovel"), new BlockItem(DIAMOND_SIGN_SHOVEL, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_flag"), DIAMOND_SIGN_FLAG);
+		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_flag"), new BlockItem(DIAMOND_SIGN_FLAG, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_cross"), DIAMOND_SIGN_CROSS);
+		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_cross"), new BlockItem(DIAMOND_SIGN_CROSS, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 
 		Registry.register(Registry.BLOCK, new Identifier("workings", "pavement"), PAVEMENT);
 		Registry.register(Registry.ITEM, new Identifier("workings", "pavement"), new BlockItem(PAVEMENT, new FabricItemSettings().group(Workings.ITEM_GROUP)));
