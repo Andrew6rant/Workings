@@ -18,6 +18,11 @@
   "block.workings.copper_pipe": "Copper Pipe",
   "block.workings.copper_pipe_small": "Small Copper Pipe",
   "block.workings.copper_pipe_large": "Large Copper Pipe",
+  "block.workings.stop_sign": "Stop Sign",
+  "block.workings.stop_sign_wall": "Wall Mounted Stop Sign",
+  "block.workings.diamond_sign_shovel": "Diamond Sign (Shovel)",
+  "block.workings.diamond_sign_flag": "Diamond Sign (Flag)",
+  "block.workings.diamond_sign_cross": "Diamond Sign (Cross)",
   "item.workings.pipe.tooltip": "Can be used as a lightning rod",
   "itemGroup.workings.general": "Workings Mod"
 }
