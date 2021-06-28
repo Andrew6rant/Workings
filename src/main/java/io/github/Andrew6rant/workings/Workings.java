@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -39,7 +40,7 @@ public class Workings implements ModInitializer {
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
-	public static final TrafficLight TRAFFIC_LIGHT_AUTO = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
+	public static final AutoTrafficLight TRAFFIC_LIGHT_AUTO = new AutoTrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
 	public static final PipeBlock BLOCK_OF_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
@@ -60,6 +61,49 @@ public class Workings implements ModInitializer {
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
 			new Identifier("workings", "general"),
 			() -> new ItemStack(Workings.TRAFFIC_LIGHT_AUTO));
+
+	public static class AutoTrafficLight extends TrafficLight {
+		public AutoTrafficLight(Settings settings) {
+			super(settings);
+			setDefaultState(getStateManager().getDefaultState().with(SPEED, 4).with(LIT, false));
+		}
+		public static final IntProperty SPEED = IntProperty.of("speed", 0, 8);
+		@Override
+		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+			stateManager.add(SPEED);
+			stateManager.add(Properties.HORIZONTAL_FACING);
+			stateManager.add(LIT);
+		}
+		@Override
+		public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
+			tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_1"));
+			tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_2"));
+		}
+		@Override
+		public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
+			int speed = blockState.get(SPEED);
+			ItemStack stack = player.getStackInHand(hand);
+			if (speed!=8){											//Yes, I know that this code looks like it does the opposite of what
+				if(stack.getItem() == Items.FERMENTED_SPIDER_EYE) { //it is supposed to do, but I've accidentally made the .png's in
+					if(!player.isCreative()){						//reverse order and would rather not take the time to swap them out
+						stack.setCount(stack.getCount()-1);
+					}
+					world.setBlockState(pos, blockState.with(SPEED, speed+1));
+					return ActionResult.SUCCESS;
+				}
+			}
+			if (speed!=0){
+				if(stack.getItem() == Items.SUGAR) {
+					if(!player.isCreative()){
+						stack.setCount(stack.getCount()-1);
+					}
+					world.setBlockState(pos, blockState.with(SPEED, speed-1));
+					return ActionResult.SUCCESS;
+				}
+			}
+			return ActionResult.FAIL;
+		}
+	}
 
 	public static class WallSignBlock extends RoadSignBlock {
 		public WallSignBlock(Settings settings) {

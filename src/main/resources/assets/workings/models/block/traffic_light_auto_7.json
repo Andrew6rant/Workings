@@ -1,0 +1,7 @@
+{
+  "parent": "workings:block/traffic_light_template",
+  "textures": {
+    "0": "workings:block/traffic_light_auto_7",
+    "particle": "workings:block/traffic_light_auto_7"
+  }
+}

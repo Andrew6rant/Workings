@@ -1,13 +1,93 @@
 {
   "variants": {
-    "facing=north,lit=false": { "model": "workings:block/traffic_light_auto" },
-    "facing=east,lit=false": { "model": "workings:block/traffic_light_auto", "y":  90},
-    "facing=south,lit=false": { "model": "workings:block/traffic_light_auto", "y": 180 },
-    "facing=west,lit=false": { "model": "workings:block/traffic_light_auto", "y": 270 },
+    "facing=north,lit=false,speed=0": { "model": "workings:block/traffic_light_auto_0" },
+    "facing=east,lit=false,speed=0": { "model": "workings:block/traffic_light_auto_0", "y":  90},
+    "facing=south,lit=false,speed=0": { "model": "workings:block/traffic_light_auto_0", "y": 180 },
+    "facing=west,lit=false,speed=0": { "model": "workings:block/traffic_light_auto_0", "y": 270 },
 
-    "facing=north,lit=true,": { "model": "workings:block/traffic_light" },
-    "facing=east,lit=true,": { "model": "workings:block/traffic_light", "y":  90},
-    "facing=south,lit=true,": { "model": "workings:block/traffic_light", "y": 180 },
-    "facing=west,lit=true,": { "model": "workings:block/traffic_light", "y": 270 }
-    }
+    "facing=north,lit=true,speed=0": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=0": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=0": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=0": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=1": { "model": "workings:block/traffic_light_auto_1" },
+    "facing=east,lit=false,speed=1": { "model": "workings:block/traffic_light_auto_1", "y":  90},
+    "facing=south,lit=false,speed=1": { "model": "workings:block/traffic_light_auto_1", "y": 180 },
+    "facing=west,lit=false,speed=1": { "model": "workings:block/traffic_light_auto_1", "y": 270 },
+
+    "facing=north,lit=true,speed=1": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=1": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=1": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=1": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=2": { "model": "workings:block/traffic_light_auto_2" },
+    "facing=east,lit=false,speed=2": { "model": "workings:block/traffic_light_auto_2", "y":  90},
+    "facing=south,lit=false,speed=2": { "model": "workings:block/traffic_light_auto_2", "y": 180 },
+    "facing=west,lit=false,speed=2": { "model": "workings:block/traffic_light_auto_2", "y": 270 },
+
+    "facing=north,lit=true,speed=2": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=2": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=2": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=2": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=3": { "model": "workings:block/traffic_light_auto_3" },
+    "facing=east,lit=false,speed=3": { "model": "workings:block/traffic_light_auto_3", "y":  90},
+    "facing=south,lit=false,speed=3": { "model": "workings:block/traffic_light_auto_3", "y": 180 },
+    "facing=west,lit=false,speed=3": { "model": "workings:block/traffic_light_auto_3", "y": 270 },
+
+    "facing=north,lit=true,speed=3": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=3": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=3": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=3": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=4": { "model": "workings:block/traffic_light_auto_4" },
+    "facing=east,lit=false,speed=4": { "model": "workings:block/traffic_light_auto_4", "y":  90},
+    "facing=south,lit=false,speed=4": { "model": "workings:block/traffic_light_auto_4", "y": 180 },
+    "facing=west,lit=false,speed=4": { "model": "workings:block/traffic_light_auto_4", "y": 270 },
+
+    "facing=north,lit=true,speed=4": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=4": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=4": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=4": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=5": { "model": "workings:block/traffic_light_auto_5" },
+    "facing=east,lit=false,speed=5": { "model": "workings:block/traffic_light_auto_5", "y":  90},
+    "facing=south,lit=false,speed=5": { "model": "workings:block/traffic_light_auto_5", "y": 180 },
+    "facing=west,lit=false,speed=5": { "model": "workings:block/traffic_light_auto_5", "y": 270 },
+
+    "facing=north,lit=true,speed=5": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=5": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=5": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=5": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=6": { "model": "workings:block/traffic_light_auto_6" },
+    "facing=east,lit=false,speed=6": { "model": "workings:block/traffic_light_auto_6", "y":  90},
+    "facing=south,lit=false,speed=6": { "model": "workings:block/traffic_light_auto_6", "y": 180 },
+    "facing=west,lit=false,speed=6": { "model": "workings:block/traffic_light_auto_6", "y": 270 },
+
+    "facing=north,lit=true,speed=6": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=6": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=6": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=6": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=7": { "model": "workings:block/traffic_light_auto_7" },
+    "facing=east,lit=false,speed=7": { "model": "workings:block/traffic_light_auto_7", "y":  90},
+    "facing=south,lit=false,speed=7": { "model": "workings:block/traffic_light_auto_7", "y": 180 },
+    "facing=west,lit=false,speed=7": { "model": "workings:block/traffic_light_auto_7", "y": 270 },
+
+    "facing=north,lit=true,speed=7": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=7": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=7": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=7": { "model": "workings:block/traffic_light", "y": 270 },
+
+    "facing=north,lit=false,speed=8": { "model": "workings:block/traffic_light_auto_8" },
+    "facing=east,lit=false,speed=8": { "model": "workings:block/traffic_light_auto_8", "y":  90},
+    "facing=south,lit=false,speed=8": { "model": "workings:block/traffic_light_auto_8", "y": 180 },
+    "facing=west,lit=false,speed=8": { "model": "workings:block/traffic_light_auto_8", "y": 270 },
+
+    "facing=north,lit=true,speed=8": { "model": "workings:block/traffic_light" },
+    "facing=east,lit=true,speed=8": { "model": "workings:block/traffic_light", "y":  90},
+    "facing=south,lit=true,speed=8": { "model": "workings:block/traffic_light", "y": 180 },
+    "facing=west,lit=true,speed=8": { "model": "workings:block/traffic_light", "y": 270 }
+  }
 }
