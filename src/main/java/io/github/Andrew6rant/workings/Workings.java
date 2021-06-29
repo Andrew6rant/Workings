@@ -54,6 +54,7 @@ public class Workings implements ModInitializer {
 	public static final RoadSignBlock DIAMOND_SIGN_CROSS = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_SHOVEL = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_FLAG = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final Item COPPER_NUGGET = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
@@ -356,6 +357,8 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_flag"), new BlockItem(DIAMOND_SIGN_FLAG, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_cross"), DIAMOND_SIGN_CROSS);
 		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_cross"), new BlockItem(DIAMOND_SIGN_CROSS, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+
+		Registry.register(Registry.ITEM, new Identifier("workings","copper_nugget"), COPPER_NUGGET);
 
 		Registry.register(Registry.BLOCK, new Identifier("workings", "pavement"), PAVEMENT);
 		Registry.register(Registry.ITEM, new Identifier("workings", "pavement"), new BlockItem(PAVEMENT, new FabricItemSettings().group(Workings.ITEM_GROUP)));

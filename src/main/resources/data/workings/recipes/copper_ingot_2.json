@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "workings:block_of_copper_pipes"
+  },
+  "result": "minecraft:copper_ingot",
+  "experience": 0.1
+}

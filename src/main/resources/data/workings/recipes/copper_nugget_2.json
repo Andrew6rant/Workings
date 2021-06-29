@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:spyglass"
+  },
+  "result": "workings:copper_nugget",
+  "experience": 0.1
+}

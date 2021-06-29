@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "workings:copper_pipe"
+    },
+    {
+      "item": "workings:copper_pipe_large"
+    },
+    {
+      "item": "workings:copper_pipe_small"
+    },
+    {
+      "item": "workings:copper_pipe_small"
+    }
+  ],
+  "result": {
+    "item": "workings:block_of_copper_pipes",
+    "count": 1
+  }
+}

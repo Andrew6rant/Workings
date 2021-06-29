@@ -10,7 +10,7 @@
           "condition": "minecraft:block_state_property",
           "block": "workings:pallet",
           "properties": {
-            "fourth": "true"
+            "level": "4"
           }
         }
       ]
@@ -24,7 +24,7 @@
           "condition": "minecraft:block_state_property",
           "block": "workings:pallet",
           "properties": {
-            "third": "true"
+            "level": "3"
           }
         }
       ]
@@ -38,7 +38,7 @@
           "condition": "minecraft:block_state_property",
           "block": "workings:pallet",
           "properties": {
-            "second": "true"
+            "level": "2"
           }
         }
       ]
@@ -52,7 +52,7 @@
           "condition": "minecraft:block_state_property",
           "block": "workings:pallet",
           "properties": {
-            "second": "false"
+            "level": "1"
           }
         }
       ]

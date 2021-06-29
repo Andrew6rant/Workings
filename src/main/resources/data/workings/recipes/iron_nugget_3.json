@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "workings:iron_pipe_large"
+  },
+  "result": "minecraft:iron_nugget",
+  "experience": 0.1
+}

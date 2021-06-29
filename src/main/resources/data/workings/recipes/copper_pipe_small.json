@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "I",
+    "i"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:copper_ingot"
+    },
+    "I": {
+      "item": "workings:copper_nugget"
+    }
+  },
+  "result": {
+    "item": "workings:copper_pipe_small",
+    "count": 2
+  }
+}

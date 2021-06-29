@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "workings:copper_pipe_small"
+  },
+  "result": "workings:copper_nugget",
+  "experience": 0.1
+}

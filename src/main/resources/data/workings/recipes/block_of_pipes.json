@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "workings:iron_pipe"
+    },
+    {
+      "item": "workings:iron_pipe_large"
+    },
+    {
+      "item": "workings:iron_pipe_small"
+    },
+    {
+      "item": "workings:iron_pipe_small"
+    }
+  ],
+  "result": {
+    "item": "workings:block_of_pipes",
+    "count": 1
+  }
+}
