@@ -266,36 +266,28 @@ public class Workings implements ModInitializer {
 	}
 
 	public static class Pallet extends Block {
-		//public static final void IntProperty(String stack, 1, 4) {
-		public static final BooleanProperty SECOND = BooleanProperty.of("second");
-		public static final BooleanProperty THIRD = BooleanProperty.of("third");
-		public static final BooleanProperty FOURTH = BooleanProperty.of("fourth");
+		public Pallet(Settings settings) {
+			super(Settings.of(Material.WOOD).nonOpaque());
+			setDefaultState(getStateManager().getDefaultState().with(LEVEL, 1));
+		}
+
+		public static final IntProperty LEVEL = IntProperty.of("level", 1, 4);
 
 		@Override
 		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(SECOND);
-			stateManager.add(THIRD);
-			stateManager.add(FOURTH);
+			stateManager.add(LEVEL);
 		}
 
-		public Pallet(Settings settings) {
-			super(Settings.of(Material.WOOD).nonOpaque());
-			setDefaultState(getStateManager().getDefaultState().with(SECOND, false).with(THIRD, false).with(FOURTH, false));
-		}
 		@Override
 		public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
-			boolean second = blockState.get(SECOND);
-			boolean third = blockState.get(THIRD);
-			boolean fourth = blockState.get(FOURTH);
+			int level = blockState.get(LEVEL);
 			ItemStack stack = player.getStackInHand(hand);
-			if (!fourth){
+			if (level!=4){
 				if(stack.getItem().equals(Workings.PALLET.asItem())) {
 					if(!player.isCreative()){
 						stack.setCount(stack.getCount()-1);
 					}
-					if(third) world.setBlockState(pos, blockState.with(FOURTH, true));
-					else if(second) world.setBlockState(pos, blockState.with(THIRD, true));
-					else world.setBlockState(pos, blockState.with(SECOND, true));
+					world.setBlockState(pos, blockState.with(LEVEL, level+1));
 					return ActionResult.SUCCESS;
 				}
 			}
@@ -303,13 +295,14 @@ public class Workings implements ModInitializer {
 		}
 		@Override
 		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			boolean second = blockState.get(SECOND);
-			boolean third = blockState.get(THIRD);
-			boolean fourth = blockState.get(FOURTH);
-			if(fourth) return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 1f, 1f);
-			else if(third) return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.75f, 1f);
-			else if(second) return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.5f, 1f);
-			else return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.25f, 1f);
+			int level = blockState.get(LEVEL);
+			return switch (level) {
+				case 1 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.25f, 1f);
+				case 2 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.5f, 1f);
+				case 3 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.75f, 1f);
+				case 4 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 1f, 1f);
+				default -> throw new IllegalStateException("Unexpected value: " + level);
+			};
 		}
 	}
 

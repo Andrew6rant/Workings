@@ -25,6 +25,6 @@
   "block.workings.diamond_sign_cross": "Diamond Sign (Cross)",
   "item.workings.pipe.tooltip": "Can be used as a lightning rod",
   "item.workings.auto_traffic_light.tooltip_1": "Use sugar or fermented spider eyes to increase",
-  "item.workings.auto_traffic_light.tooltip_2": "or decrease the speed of the lights by 20%",
+  "item.workings.auto_traffic_light.tooltip_2": "or decrease the speed of light switching by 20%",
   "itemGroup.workings.general": "Workings Mod"
 }
