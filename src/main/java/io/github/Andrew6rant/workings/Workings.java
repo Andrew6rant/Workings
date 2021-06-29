@@ -1,33 +1,23 @@
 package io.github.Andrew6rant.workings;
 
+import io.github.Andrew6rant.workings.block.*;
+import io.github.Andrew6rant.workings.block.pipe.LargeRodBlock;
+import io.github.Andrew6rant.workings.block.pipe.MidRodBlock;
+import io.github.Andrew6rant.workings.block.pipe.PipeBlock;
+import io.github.Andrew6rant.workings.block.pipe.SmallRodBlock;
+import io.github.Andrew6rant.workings.block.sign.RoadSignBlock;
+import io.github.Andrew6rant.workings.block.trafficlight.AutoTrafficLight;
+import io.github.Andrew6rant.workings.block.trafficlight.TrafficLight;
+import io.github.Andrew6rant.workings.block.sign.WallSignBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.*;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-
-import java.util.List;
 
 
 public class Workings implements ModInitializer {
@@ -63,252 +53,6 @@ public class Workings implements ModInitializer {
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-
-
-
-	public static class AutoTrafficLight extends TrafficLight {
-		public AutoTrafficLight(Settings settings) {
-			super(settings);
-			setDefaultState(getStateManager().getDefaultState().with(SPEED, 4).with(LIT, false));
-		}
-		public static final IntProperty SPEED = IntProperty.of("speed", 0, 8);
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(SPEED);
-			stateManager.add(Properties.HORIZONTAL_FACING);
-			stateManager.add(LIT);
-		}
-		@Override
-		public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-			tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_1"));
-			tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_2"));
-		}
-		@Override
-		public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
-			int speed = blockState.get(SPEED);
-			ItemStack stack = player.getStackInHand(hand);
-			if (speed!=8){											//Yes, I know that this code looks like it does the opposite of what
-				if(stack.getItem() == Items.FERMENTED_SPIDER_EYE) { //it is supposed to do, but I've accidentally made the .png's in
-					if(!player.isCreative()){						//reverse order and would rather not take the time to swap them out
-						stack.setCount(stack.getCount()-1);
-					}
-					world.setBlockState(pos, blockState.with(SPEED, speed+1));
-					return ActionResult.SUCCESS;
-				}
-			}
-			if (speed!=0){
-				if(stack.getItem() == Items.SUGAR) {
-					if(!player.isCreative()){
-						stack.setCount(stack.getCount()-1);
-					}
-					world.setBlockState(pos, blockState.with(SPEED, speed-1));
-					return ActionResult.SUCCESS;
-				}
-			}
-			return ActionResult.FAIL;
-		}
-	}
-
-	public static class WallSignBlock extends RoadSignBlock {
-		public WallSignBlock(Settings settings) {
-			super(settings);
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case EAST -> VoxelShapes.cuboid(0f, 0f, 0f, 0.1875f, 1f, 1f);
-				case WEST -> VoxelShapes.cuboid(0.8125f, 0f, 0f, 1f, 1f, 1f);
-				case NORTH -> VoxelShapes.cuboid(0f, 0f, 0.8125f, 1f, 1f, 1f);
-				case SOUTH -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 1f, 0.1875f);
-				default -> VoxelShapes.fullCube();
-			};
-		}
-	}
-	public static class RoadSignBlock extends HorizontalFacingBlock {
-		public RoadSignBlock(Settings settings) {
-			super(Settings.of(Material.METAL).nonOpaque());
-		}
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case EAST, WEST -> VoxelShapes.cuboid(0.40625f, 0f, 0f, 0.59375f, 1f, 1f);
-				case NORTH, SOUTH -> VoxelShapes.cuboid(0f, 0f, 0.40625f, 1f, 1f, 0.59375f);
-				default -> VoxelShapes.fullCube();
-			};
-		}
-	}
-
-	public static class SmallRodBlock extends LightningRodBlock {
-		public SmallRodBlock(AbstractBlock.Settings settings) {
-			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
-		}
-		@Override
-		public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-			tooltip.add(new TranslatableText("item.workings.pipe.tooltip"));
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case UP, DOWN -> VoxelShapes.cuboid(0.40625f, 0f, 0.40625f, 0.59375f, 1f, 0.59375f);
-				case NORTH, SOUTH -> VoxelShapes.cuboid(0.40625f, 0.40625f, 0f, 0.59375f, 0.59375f, 1f);
-				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.40625f, 0.40625f, 1f, 0.59375f, 0.59375f);
-			};
-		}
-	}
-	public static class MidRodBlock extends LightningRodBlock {
-		public MidRodBlock(AbstractBlock.Settings settings) {
-			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case UP, DOWN -> VoxelShapes.cuboid(0.28125f, 0f, 0.28125f, 0.71875f, 1f, 0.71875f);
-				case NORTH, SOUTH -> VoxelShapes.cuboid(0.28125f, 0.28125f, 0f, 0.71875f, 0.71875f, 1f);
-				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.28125f, 0.28125f, 1f, 0.71875f, 0.71875f);
-			};
-		}
-		@Override
-		public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-			tooltip.add(new TranslatableText("item.workings.pipe.tooltip"));
-		}
-	}
-	public static class LargeRodBlock extends LightningRodBlock {
-		public LargeRodBlock(AbstractBlock.Settings settings) {
-			super(AbstractBlock.Settings.of(Material.METAL).nonOpaque());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case UP, DOWN -> VoxelShapes.cuboid(0.21875f, 0f, 0.21875f, 0.78125f, 1f, 0.78125f);
-				case NORTH, SOUTH -> VoxelShapes.cuboid(0.21875f, 0.21875f, 0f, 0.78125f, 0.78125f, 1f);
-				case EAST, WEST -> VoxelShapes.cuboid(0f, 0.21875f, 0.21875f, 1f, 0.78125f, 0.78125f);
-			};
-		}
-		@Override
-		public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-			tooltip.add(new TranslatableText("item.workings.pipe.tooltip"));
-		}
-	}
-
-	public static class PipeBlock extends HorizontalFacingBlock {
-		public PipeBlock(Settings settings) {
-			super(Settings.of(Material.METAL).nonOpaque());
-		}
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			Direction dir = blockState.get(FACING);
-			return switch (dir) {
-				case NORTH -> VoxelShapes.cuboid(-0.0625f, -0.0625f, 0f, 1f, 1f, 1f);
-				case SOUTH -> VoxelShapes.cuboid(0f, -0.0625f, 0f, 1.0625f, 1f, 1f);
-				case EAST -> VoxelShapes.cuboid(0f, -0.0625f, -0.0625f, 1f, 1f, 1f);
-				case WEST -> VoxelShapes.cuboid(0f, -0.0625f, 0f, 1f, 1f, 1.0625f);
-				default -> VoxelShapes.fullCube();
-			};
-
-		}
-
-	}
-
-	public static class TrafficLight extends RedstoneLampBlock {
-		public TrafficLight(Settings settings) {
-			super(settings.emissiveLighting((state, world, pos) -> true));
-		}
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-			stateManager.add(Properties.LIT);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			return VoxelShapes.cuboid(0.3125f, 0f, 0.3125f, 0.6875f, 1f, 0.6875f);
-		}
-	}
-
-	public static class DrumBlock extends Block {
-		public DrumBlock(Settings settings) {
-			super(Settings.of(Material.DECORATION).nonOpaque());
-		}
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			return VoxelShapes.cuboid(0.125f, 0f, 0.125f, 0.875f, 1.0625f, 0.875f);
-		}
-	}
-
-	public static class ConeBlock extends Block {
-		public ConeBlock(Settings settings) {
-			super(Settings.of(Material.DECORATION).nonOpaque());
-		}
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(Properties.HORIZONTAL_FACING);
-		}
-		public BlockState getPlacementState(ItemPlacementContext ctx){
-			return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
-		}
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			return VoxelShapes.cuboid(0.40625f, 0f, 0.40625f, 0.59375f, 1.25f, 0.59375f);
-		}
-	}
-
-	public static class Pallet extends Block {
-		public Pallet(Settings settings) {
-			super(Settings.of(Material.WOOD).nonOpaque());
-			setDefaultState(getStateManager().getDefaultState().with(LEVEL, 1));
-		}
-
-		public static final IntProperty LEVEL = IntProperty.of("level", 1, 4);
-
-		@Override
-		protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-			stateManager.add(LEVEL);
-		}
-
-		@Override
-		public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){
-			int level = blockState.get(LEVEL);
-			ItemStack stack = player.getStackInHand(hand);
-			if (level!=4){
-				if(stack.getItem().equals(Workings.PALLET.asItem())) {
-					if(!player.isCreative()){
-						stack.setCount(stack.getCount()-1);
-					}
-					world.setBlockState(pos, blockState.with(LEVEL, level+1));
-					return ActionResult.SUCCESS;
-				}
-			}
-			return ActionResult.FAIL;
-		}
-		@Override
-		public VoxelShape getOutlineShape(BlockState blockState, BlockView view, BlockPos pos, ShapeContext context) {
-			int level = blockState.get(LEVEL);
-			return switch (level) {
-				case 1 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.25f, 1f);
-				case 2 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.5f, 1f);
-				case 3 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.75f, 1f);
-				case 4 -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 1f, 1f);
-				default -> throw new IllegalStateException("Unexpected value: " + level);
-			};
-		}
-	}
 
 	@Override
 	public void onInitialize() {
