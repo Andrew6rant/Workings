@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I ",
+    "IYI",
+    " I "
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:banners"
+    },
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "Y": {
+      "item": "minecraft:orange_concrete"
+    }
+  },
+  "result": {
+    "item": "workings:diamond_sign_flag",
+    "count": 1
+  }
+}

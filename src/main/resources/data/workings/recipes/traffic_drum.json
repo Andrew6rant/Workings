@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#O",
+    "O#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "O": {
+      "item": "minecraft:orange_concrete"
+    }
+  },
+  "result": {
+    "item": "workings:traffic_drum",
+    "count": 1
+  }
+}

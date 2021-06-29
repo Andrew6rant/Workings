@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#R#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "R": {
+      "item": "minecraft:yellow_concrete"
+    }
+  },
+  "result": {
+    "item": "workings:diamond_sign_cross",
+    "count": 1
+  }
+}
