@@ -32,6 +32,10 @@ import java.util.List;
 
 public class Workings implements ModInitializer {
 
+	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
+			new Identifier("workings", "general"),
+			() -> new ItemStack(Workings.TRAFFIC_LIGHT_AUTO));
+
 	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
 	public static final Item BUNDLE_OF_STICKS = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
 	public static final Pallet PALLET = new Pallet(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
@@ -49,19 +53,18 @@ public class Workings implements ModInitializer {
 	public static final SmallRodBlock COPPER_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final Item COPPER_NUGGET = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
 	public static final RoadSignBlock STOP_SIGN = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final WallSignBlock STOP_SIGN_WALL = new WallSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_CROSS = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_SHOVEL = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_FLAG = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final Item COPPER_NUGGET = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
+
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 
-	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
-			new Identifier("workings", "general"),
-			() -> new ItemStack(Workings.TRAFFIC_LIGHT_AUTO));
+
 
 	public static class AutoTrafficLight extends TrafficLight {
 		public AutoTrafficLight(Settings settings) {
@@ -328,8 +331,6 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light"), new BlockItem(TRAFFIC_LIGHT, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","traffic_light_auto"), TRAFFIC_LIGHT_AUTO);
 		Registry.register(Registry.ITEM, new Identifier("workings", "traffic_light_auto"), new BlockItem(TRAFFIC_LIGHT_AUTO, new FabricItemSettings().group(Workings.ITEM_GROUP)));
-		//Registry.register(Registry.BLOCK, new Identifier("workings","emissive_texture_test_block"), EMISSIVE_TEXTURE_TEST_BLOCK);
-		//Registry.register(Registry.ITEM, new Identifier("workings", "emissive_texture_test_block"), new BlockItem(EMISSIVE_TEXTURE_TEST_BLOCK, new FabricItemSettings().group(ItemGroup.MISC)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","block_of_pipes"), BLOCK_OF_PIPES);
 		Registry.register(Registry.ITEM, new Identifier("workings", "block_of_pipes"), new BlockItem(BLOCK_OF_PIPES, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","iron_pipe_small"), IRON_PIPE_SMALL);
@@ -346,19 +347,17 @@ public class Workings implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe"), new BlockItem(COPPER_PIPE, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","copper_pipe_large"), COPPER_PIPE_LARGE);
 		Registry.register(Registry.ITEM, new Identifier("workings", "copper_pipe_large"), new BlockItem(COPPER_PIPE_LARGE, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+		Registry.register(Registry.ITEM, new Identifier("workings","copper_nugget"), COPPER_NUGGET);
 		Registry.register(Registry.BLOCK, new Identifier("workings","stop_sign"), STOP_SIGN);
 		Registry.register(Registry.ITEM, new Identifier("workings", "stop_sign"), new BlockItem(STOP_SIGN, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","stop_sign_wall"), STOP_SIGN_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "stop_sign_wall"), new BlockItem(STOP_SIGN_WALL, new FabricItemSettings().group(Workings.ITEM_GROUP)));
-
 		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_shovel"), DIAMOND_SIGN_SHOVEL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_shovel"), new BlockItem(DIAMOND_SIGN_SHOVEL, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_flag"), DIAMOND_SIGN_FLAG);
 		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_flag"), new BlockItem(DIAMOND_SIGN_FLAG, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","diamond_sign_cross"), DIAMOND_SIGN_CROSS);
 		Registry.register(Registry.ITEM, new Identifier("workings", "diamond_sign_cross"), new BlockItem(DIAMOND_SIGN_CROSS, new FabricItemSettings().group(Workings.ITEM_GROUP)));
-
-		Registry.register(Registry.ITEM, new Identifier("workings","copper_nugget"), COPPER_NUGGET);
 
 		Registry.register(Registry.BLOCK, new Identifier("workings", "pavement"), PAVEMENT);
 		Registry.register(Registry.ITEM, new Identifier("workings", "pavement"), new BlockItem(PAVEMENT, new FabricItemSettings().group(Workings.ITEM_GROUP)));
