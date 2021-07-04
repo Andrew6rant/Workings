@@ -12,7 +12,7 @@
     "sources": "https://github.com/Andrew6rant/Workings"
   },
 
-  "license": "CC0-1.0",
+  "license": "LGPL-2.1",
   "icon": "assets/workings/icon.png",
 
   "environment": "*",
