@@ -98,6 +98,10 @@ Wool can be substituted for concrete or terracotta. Any shovel and any banner (i
 Block of sticks are decorative blocks that have a burn time of 3000.
   
 ![Block of Sticks](https://imgur.com/dg065Ga.png)
+
+Pallets are just decorative blocks for now:
+  
+![Pallets](https://imgur.com/saWobus.png)
   
 Block of Pavement and Block of Asphalt. Pavement is used to craft Jersey Walls and Highway Barriers.
   
@@ -127,6 +131,16 @@ Copper Nugget
 Copper Nuggets are a crafting ingredient used to make pipes. Once Copper ingot is nine Copper Nuggets. Copper Nuggets can also be made by smelting down any Vanilla or Workings' Copper blocks or items.
 
 </details>
+
+<details>
+<summary><strong>Known Issues</strong></summary>
+  
+- The Highway Barrier texture has some Z-fighting if connected to both the X and Z axis.
+- Pallets have no drops, I am unable to get the loottable to accept multiple blockstates (PR's welcome!)
+- Asphalt is creative-only for now. I haven't decided what recipe to give it yet.
+  
+</details>
+
 
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/workings
 
