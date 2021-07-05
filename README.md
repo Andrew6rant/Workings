@@ -60,7 +60,7 @@ Traffic Lights are based on the direction of the player placing them. They can b
 Automatic Traffic Lights are also based on the player direction. Their speed can be changed by feeding them sugar or fermented spider eyes. Each click adds or subtracts 20% of the current speed, for a total of nine speed combinations.
 Giving an Automatic Traffic Light a redstone signal will freeze it in place.
   
-![Changing traffic light speed gif](https://imgur.com/jmRqsGX.gif)
+![Changing traffic light speed gif](https://imgur.com/Hio5HyH.gif)
   
 Here are the recipes for the Traffic Light:
   
