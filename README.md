@@ -116,13 +116,13 @@ For Pavement, any type of Sand and any type of Cobblestone (Blackstone, Cobbled 
 
 Bundle of Sticks
   
-![Bundle of sticks](https://imgur.com/fIdrpFu.png)
+![Bundle of sticks](https://imgur.com/kdeuZ7X.png)
 
 Bundles of Sticks are a crafting ingredient for Blocks of Sticks. They have a burn time of 1000 and can be used to bulk craft torches.
 
 Copper Nugget
   
-![Copper Nugget](https://imgur.com/7AywpPi.png)
+![Copper Nugget](https://imgur.com/98C5TLX.png)
 
 Copper Nuggets are a crafting ingredient used to make pipes. Once Copper ingot is nine Copper Nuggets. Copper Nuggets can also be made by smelting down any Vanilla or Workings' Copper blocks or items.
 
