@@ -53,7 +53,7 @@ public class Workings implements ModInitializer {
 
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-	public static final Block ASPHALT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
+	public static final AsphaltBlock ASPHALT = new AsphaltBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
 
 	@Override
 	public void onInitialize() {

@@ -2,12 +2,13 @@
   "type": "minecraft:alternatives",
   "children": [
     {
-      "rolls": 4,
-      "type": "minecraft:item",
+      "rolls": 1,
+      "type": "item",
       "name": "workings:pallet",
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
+          "chance": 1.0,
           "block": "workings:pallet",
           "properties": {
             "level": "4"
@@ -16,12 +17,13 @@
       ]
     },
     {
-      "rolls": 3,
-      "type": "minecraft:item",
+      "rolls": 1,
+      "type": "item",
       "name": "workings:pallet",
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
+          "chance": 1.0,
           "block": "workings:pallet",
           "properties": {
             "level": "3"
@@ -30,12 +32,13 @@
       ]
     },
     {
-      "rolls": 2,
-      "type": "minecraft:item",
+      "rolls": 1,
+      "type": "item",
       "name": "workings:pallet",
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
+          "chance": 1.0,
           "block": "workings:pallet",
           "properties": {
             "level": "2"
@@ -45,11 +48,12 @@
     },
     {
       "rolls": 1,
-      "type": "minecraft:item",
+      "type": "item",
       "name": "workings:pallet",
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
+          "chance": 1.0,
           "block": "workings:pallet",
           "properties": {
             "level": "1"

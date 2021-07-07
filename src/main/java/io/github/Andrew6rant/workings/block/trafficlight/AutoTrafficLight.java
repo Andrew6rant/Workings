@@ -12,6 +12,7 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -34,10 +35,10 @@ public class AutoTrafficLight extends TrafficLight {
     }
     @Override
     public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_1"));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_2"));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_3"));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_4"));
+        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_1").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_2").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_3").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_4").formatted(Formatting.GRAY));
     }
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){

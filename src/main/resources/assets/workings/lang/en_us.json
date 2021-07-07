@@ -3,7 +3,7 @@
   "item.workings.copper_nugget": "Copper Nugget",
   "block.workings.block_of_sticks": "Block of Sticks",
   "block.workings.pavement": "Pavement",
-  "block.workings.asphalt": "Asphalt [Developer]",
+  "block.workings.asphalt": "Asphalt",
   "block.workings.pallet": "Pallet",
   "block.workings.jersey_wall": "Jersey Wall",
   "block.workings.highway_wall": "Highway Wall",
@@ -29,5 +29,6 @@
   "item.workings.auto_traffic_light.tooltip_3": "the light switching by 20% each time",
   "item.workings.auto_traffic_light.tooltip_4": "A redstone signal will stop auto-switching",
   "item.workings.traffic_light.tooltip": "A redstone signal will switch light",
+  "block.workings.asphalt.tooltip": "Gives Speed II when standing on",
   "itemGroup.workings.general": "Workings Mod"
 }
