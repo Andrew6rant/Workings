@@ -65,6 +65,7 @@ public class Workings implements ModInitializer {
 		FuelRegistry.INSTANCE.add(BUNDLE_OF_STICKS, 1000);
 		FuelRegistry.INSTANCE.add(BLOCK_OF_STICKS, 3000);
 		Registry.register(Registry.BLOCK, new Identifier("workings", "pallet"), PALLET);
+		FuelRegistry.INSTANCE.add(PALLET, 250);
 		Registry.register(Registry.ITEM, new Identifier("workings", "pallet"), new BlockItem(PALLET, new FabricItemSettings().group(Workings.ITEM_GROUP)));
 		Registry.register(Registry.BLOCK, new Identifier("workings","jersey_wall"), JERSEY_WALL);
 		Registry.register(Registry.ITEM, new Identifier("workings", "jersey_wall"), new BlockItem(JERSEY_WALL, new FabricItemSettings().group(Workings.ITEM_GROUP)));

@@ -5,11 +5,11 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:oak_planks"
+      "item": "minecraft:oak_fence"
     }
   },
   "result": {
     "item": "workings:pallet",
-    "count": 1
+    "count": 4
   }
 }
