@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "io.github.Andrew6rant.workings.Workings"
+    ],
+    "client": [
+      "io.github.Andrew6rant.workings.WorkingsClient"
     ]
   },
 
