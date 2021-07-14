@@ -1,63 +1,60 @@
 {
-  "type": "minecraft:alternatives",
-  "children": [
+  "type": "minecraft:block",
+  "pools": [
     {
-      "rolls": 1,
-      "type": "item",
-      "name": "workings:pallet",
-      "conditions": [
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
         {
-          "condition": "minecraft:block_state_property",
-          "chance": 1.0,
-          "block": "workings:pallet",
-          "properties": {
-            "level": "4"
-          }
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "type": "item",
-      "name": "workings:pallet",
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "chance": 1.0,
-          "block": "workings:pallet",
-          "properties": {
-            "level": "3"
-          }
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "type": "item",
-      "name": "workings:pallet",
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "chance": 1.0,
-          "block": "workings:pallet",
-          "properties": {
-            "level": "2"
-          }
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "type": "item",
-      "name": "workings:pallet",
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "chance": 1.0,
-          "block": "workings:pallet",
-          "properties": {
-            "level": "1"
-          }
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "workings:pallet",
+                  "properties": {
+                    "level": "2"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "workings:pallet",
+                  "properties": {
+                    "level": "3"
+                  }
+                }
+              ],
+              "count": 3.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "workings:pallet",
+                  "properties": {
+                    "level": "4"
+                  }
+                }
+              ],
+              "count": 4.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "workings:pallet"
         }
       ]
     }
