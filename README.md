@@ -136,7 +136,6 @@ Copper Nuggets are a crafting ingredient used to make pipes. Once Copper ingot i
 <summary><strong>Known Issues</strong></summary>
   
 - The Highway Barrier texture has some Z-fighting if connected to both the X and Z axis.
-- Pallets have no drops, I am unable to get the loottable to accept multiple blockstates (PR's welcome!)
   
 </details>
 
