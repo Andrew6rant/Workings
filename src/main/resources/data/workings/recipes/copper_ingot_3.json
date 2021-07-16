@@ -1,20 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "##",
-    "ii",
-    "##"
+    "###",
+    "###",
+    "###"
   ],
   "key": {
     "#": {
       "tag": "c:copper_nuggets"
-    },
-    "i": {
-      "item": "minecraft:copper_ingot"
     }
   },
   "result": {
-    "item": "workings:copper_pipe",
+    "item": "minecraft:copper_ingot",
     "count": 1
   }
 }

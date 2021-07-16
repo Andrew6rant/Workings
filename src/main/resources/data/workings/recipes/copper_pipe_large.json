@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "item": "workings:copper_nugget"
+      "tag": "c:copper_nuggets"
     },
     "i": {
       "item": "minecraft:copper_ingot"
