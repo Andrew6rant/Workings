@@ -128,7 +128,7 @@ Copper Nugget
   
 ![Copper Nugget](https://imgur.com/98C5TLX.png)
 
-Copper Nuggets are a crafting ingredient used to make pipes. Once Copper ingot is nine Copper Nuggets. Copper Nuggets can also be made by smelting down any Vanilla or Workings' Copper blocks or items.
+Copper Nuggets are a crafting ingredient used to make pipes. Once Copper ingot is nine Copper Nuggets. Copper Nuggets can also be made by smelting down any Vanilla or Workings' Copper blocks or items. New in 1.0.6, Copper Nuggets now use fabric tags, for mod compatibility
 
 </details>
 
