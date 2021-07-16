@@ -25,7 +25,7 @@ public class AsphaltBlock extends Block {
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity){
         if (entity instanceof LivingEntity){
-            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 1));
+            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 1, false, false));
         }
         super.onSteppedOn(world, pos, state, entity);
     }
