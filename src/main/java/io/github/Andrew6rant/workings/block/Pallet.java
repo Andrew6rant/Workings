@@ -22,13 +22,14 @@ import net.minecraft.world.World;
 
 public class Pallet extends Block{
     public Pallet(Settings settings) {
-        super(Settings.of(Material.WOOD).nonOpaque());;
+        super(Settings.of(Material.WOOD).nonOpaque());
+        setDefaultState(stateManager.getDefaultState().with(LVL1NORTH, 1).with(LVL2NORTH, 0).with(LVL3NORTH, 0).with(LVL4NORTH, 0));
     }
 
-    public static final IntProperty LVL1NORTH = IntProperty.of("level1north", 1, 2);
-    public static final IntProperty LVL2NORTH = IntProperty.of("level2north", 0, 2);
-    public static final IntProperty LVL3NORTH = IntProperty.of("level3north", 0, 2);
-    public static final IntProperty LVL4NORTH = IntProperty.of("level4north", 0, 2);
+    public static final IntProperty LVL1NORTH = IntProperty.of("lvl1", 1, 2);
+    public static final IntProperty LVL2NORTH = IntProperty.of("lvl2", 0, 2);
+    public static final IntProperty LVL3NORTH = IntProperty.of("lvl3", 0, 2);
+    public static final IntProperty LVL4NORTH = IntProperty.of("lvl4", 0, 2);
 
 
     @Override
