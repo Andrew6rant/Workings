@@ -32,6 +32,34 @@
     "lvl1=1,lvl2=1,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_1122"},
     "lvl1=2,lvl2=1,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_2122"},
     "lvl1=1,lvl2=2,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_1222"},
-    "lvl1=2,lvl2=2,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_2222"}
+    "lvl1=2,lvl2=2,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_2222"},
+
+
+    "lvl1=1,lvl2=0,lvl3=1,lvl4=1": {"model": "workings:block/pallet_oak_1111"},
+    "lvl1=2,lvl2=0,lvl3=1,lvl4=1": {"model": "workings:block/pallet_oak_2111"},
+    "lvl1=1,lvl2=0,lvl3=2,lvl4=1": {"model": "workings:block/pallet_oak_1121"},
+    "lvl1=2,lvl2=0,lvl3=2,lvl4=1": {"model": "workings:block/pallet_oak_2121"},
+    "lvl1=1,lvl2=0,lvl3=1,lvl4=2": {"model": "workings:block/pallet_oak_1112"},
+    "lvl1=2,lvl2=0,lvl3=1,lvl4=2": {"model": "workings:block/pallet_oak_2112"},
+    "lvl1=1,lvl2=0,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_1122"},
+    "lvl1=2,lvl2=0,lvl3=2,lvl4=2": {"model": "workings:block/pallet_oak_2122"},
+
+    "lvl1=1,lvl2=1,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_1111"},
+    "lvl1=2,lvl2=1,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_2111"},
+    "lvl1=1,lvl2=2,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_1211"},
+    "lvl1=2,lvl2=2,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_2211"},
+    "lvl1=1,lvl2=1,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_1112"},
+    "lvl1=2,lvl2=1,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_2112"},
+    "lvl1=1,lvl2=2,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_1212"},
+    "lvl1=2,lvl2=2,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_2212"},
+
+    "lvl1=1,lvl2=0,lvl3=1,lvl4=0": {"model": "workings:block/pallet_oak_1111"},
+    "lvl1=2,lvl2=0,lvl3=1,lvl4=0": {"model": "workings:block/pallet_oak_2111"},
+    "lvl1=1,lvl2=0,lvl3=2,lvl4=0": {"model": "workings:block/pallet_oak_1121"},
+    "lvl1=2,lvl2=0,lvl3=2,lvl4=0": {"model": "workings:block/pallet_oak_2121"},
+    "lvl1=1,lvl2=0,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_1112"},
+    "lvl1=2,lvl2=0,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_2112"},
+    "lvl1=1,lvl2=0,lvl3=0,lvl4=2": {"model": "workings:block/pallet_oak_1122"},
+    "lvl1=2,lvl2=0,lvl3=0,lvl4=1": {"model": "workings:block/pallet_oak_2122"}
   }
 }
