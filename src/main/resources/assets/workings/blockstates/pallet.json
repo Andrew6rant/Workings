@@ -1,8 +1,38 @@
 {
   "variants": {
-    "level=1": {"model": "workings:block/pallet"},
-    "level=2": {"model": "workings:block/pallet_2"},
-    "level=3": {"model": "workings:block/pallet_3"},
-    "level=4": {"model": "workings:block/pallet_4"}
+    "lvl1=1,lvl2=0,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=0,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+
+    "lvl1=1,lvl2=1,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=0,lvl4=0": {"model": "minecraft:block/cobblestone"},
+
+    "lvl1=1,lvl2=1,lvl3=1,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=1,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=1,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=1,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=1,lvl3=2,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=2,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=2,lvl4=0": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=2,lvl4=0": {"model": "minecraft:block/cobblestone"},
+
+    "lvl1=1,lvl2=1,lvl3=1,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=1,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=1,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=1,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=1,lvl3=2,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=2,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=2,lvl4=1": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=2,lvl4=1": {"model": "minecraft:block/cobblestone"},
+
+    "lvl1=1,lvl2=1,lvl3=1,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=1,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=1,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=1,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=1,lvl3=2,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=1,lvl3=2,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=1,lvl2=2,lvl3=2,lvl4=2": {"model": "minecraft:block/cobblestone"},
+    "lvl1=2,lvl2=2,lvl3=2,lvl4=2": {"model": "minecraft:block/cobblestone"}
   }
 }
