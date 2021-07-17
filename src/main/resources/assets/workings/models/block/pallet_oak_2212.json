@@ -1,0 +1,6 @@
+{
+	"parent": "workings:block/pallet_template_2212",
+	"textures": {
+		"planks": "minecraft:block/oak_planks"
+	}
+}

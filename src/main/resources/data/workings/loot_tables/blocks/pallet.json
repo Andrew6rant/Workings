@@ -15,7 +15,7 @@
                   "condition": "minecraft:block_state_property",
                   "block": "workings:pallet",
                   "properties": {
-                    "level": "2"
+                    "lvl2": "1,2"
                   }
                 }
               ],
@@ -29,7 +29,7 @@
                   "condition": "minecraft:block_state_property",
                   "block": "workings:pallet",
                   "properties": {
-                    "level": "3"
+                    "lvl3": "1,2"
                   }
                 }
               ],
@@ -43,7 +43,7 @@
                   "condition": "minecraft:block_state_property",
                   "block": "workings:pallet",
                   "properties": {
-                    "level": "4"
+                    "lvl4": "1,2"
                   }
                 }
               ],
