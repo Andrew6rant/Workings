@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "workings",
-  "version": "1.0.8",
+  "version": "${version}",
 
   "name": "Workings",
   "description": "Construction themed mod for ModFest 1.17",
@@ -9,7 +9,9 @@
     "Andrew Grant (Andrew6rant)"
   ],
   "contact": {
-    "sources": "https://github.com/Andrew6rant/Workings"
+    "homepage": "https://modrinth.com/mod/workings",
+    "sources": "https://github.com/Andrew6rant/Workings",
+    "issues": "https://github.com/Andrew6rant/Workings/issues"
   },
 
   "license": "LGPL-2.1",
@@ -30,8 +32,5 @@
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
