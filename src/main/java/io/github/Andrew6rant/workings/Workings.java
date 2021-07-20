@@ -15,6 +15,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -36,23 +37,23 @@ public class Workings implements ModInitializer {
 		FuelRegistry.INSTANCE.add((ItemConvertible) blockOrItem, value);
 	}
 
-	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
+	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).sounds(BlockSoundGroup.WOOD));
 	public static final Item BUNDLE_OF_STICKS = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
-	public static final Pallet PALLET = new Pallet(FabricBlockSettings.of(Material.WOOD).strength(2.0f));
-	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
+	public static final Pallet PALLET = new Pallet(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
+	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
+	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
 	public static final AutoTrafficLight TRAFFIC_LIGHT_AUTO = new AutoTrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
-	public static final PipeBlock BLOCK_OF_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final LargeRodBlock IRON_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final PipeBlock BLOCK_OF_COPPER_PIPES = new PipeBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final SmallRodBlock COPPER_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final PipeBlock BLOCK_OF_PIPES = new PipeBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK));
+	public static final SmallRodBlock IRON_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
+	public static final MidRodBlock IRON_PIPE = new MidRodBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
+	public static final LargeRodBlock IRON_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
+	public static final PipeBlock BLOCK_OF_COPPER_PIPES = new PipeBlock(AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK));
+	public static final SmallRodBlock COPPER_PIPE_SMALL = new SmallRodBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
+	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
+	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
 	public static final Item COPPER_NUGGET = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
 	public static final RoadSignBlock STOP_SIGN = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	//public static final WallSignBlock STOP_SIGN_WALL = new WallSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
@@ -61,8 +62,8 @@ public class Workings implements ModInitializer {
 	public static final RoadSignBlock DIAMOND_SIGN_SHOVEL = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 	public static final RoadSignBlock DIAMOND_SIGN_FLAG = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
 
-	public static final Block PAVEMENT = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f));
-	public static final AsphaltBlock ASPHALT = new AsphaltBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f));
+	public static final Block PAVEMENT = new Block(FabricBlockSettings.copy(Blocks.STONE));
+	public static final AsphaltBlock ASPHALT = new AsphaltBlock(FabricBlockSettings.copy(Blocks.STONE));
 
 	@Override
 	public void onInitialize() {

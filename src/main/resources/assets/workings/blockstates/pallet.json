@@ -1,8 +1,23 @@
 {
   "variants": {
-    "level=1": {"model": "workings:block/pallet"},
-    "level=2": {"model": "workings:block/pallet_2"},
-    "level=3": {"model": "workings:block/pallet_3"},
-    "level=4": {"model": "workings:block/pallet_4"}
+    "level=1,facing=north": {"model": "workings:block/pallet"},
+    "level=2,facing=north": {"model": "workings:block/pallet_2"},
+    "level=3,facing=north": {"model": "workings:block/pallet_3"},
+    "level=4,facing=north": {"model": "workings:block/pallet_4"},
+
+    "level=1,facing=east": {"model": "workings:block/pallet", "y":  90},
+    "level=2,facing=east": {"model": "workings:block/pallet_2", "y":  90},
+    "level=3,facing=east": {"model": "workings:block/pallet_3", "y":  90},
+    "level=4,facing=east": {"model": "workings:block/pallet_4", "y":  90},
+
+    "level=1,facing=south": {"model": "workings:block/pallet", "y": 180},
+    "level=2,facing=south": {"model": "workings:block/pallet_2", "y": 180},
+    "level=3,facing=south": {"model": "workings:block/pallet_3", "y": 180},
+    "level=4,facing=south": {"model": "workings:block/pallet_4", "y": 180},
+
+    "level=1,facing=west": {"model": "workings:block/pallet", "y": 270},
+    "level=2,facing=west": {"model": "workings:block/pallet_2", "y": 270},
+    "level=3,facing=west": {"model": "workings:block/pallet_3", "y": 270},
+    "level=4,facing=west": {"model": "workings:block/pallet_4", "y": 270}
   }
 }
