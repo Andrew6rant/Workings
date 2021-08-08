@@ -1,8 +1,19 @@
 {
   "variants": {
-    "facing=north": { "model": "workings:block/stop_sign_wall" },
-    "facing=east":  { "model": "workings:block/stop_sign_wall", "y":  90},
-    "facing=south": { "model": "workings:block/stop_sign_wall", "y": 180 },
-    "facing=west":  { "model": "workings:block/stop_sign_wall", "y": 270 }
+    "facing=east": {
+      "model": "workings:block/stop_sign_wall"
+    },
+    "facing=north": {
+      "model": "workings:block/stop_sign_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "workings:block/stop_sign_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "workings:block/stop_sign_wall",
+      "y": 180
+    }
   }
 }

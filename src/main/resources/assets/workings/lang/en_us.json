@@ -23,6 +23,11 @@
   "block.workings.diamond_sign_shovel": "Diamond Sign (Shovel)",
   "block.workings.diamond_sign_flag": "Diamond Sign (Flag)",
   "block.workings.diamond_sign_cross": "Diamond Sign (Cross)",
+  "block.workings.stop_sign_wall": "Wall Mounted Stop Sign",
+  "block.workings.diamond_sign_shovel_wall": "Wall Mounted Diamond Sign (Shovel)",
+  "block.workings.diamond_sign_flag_wall": "Wall Mounted Diamond Sign (Flag)",
+  "block.workings.diamond_sign_cross_wall": "Wall Mounted Diamond Sign (Cross)",
+
   "item.workings.pipe.tooltip": "Can be used as a lightning rod",
   "item.workings.auto_traffic_light.tooltip_1": "Use sugar or fermented spider eyes",
   "item.workings.auto_traffic_light.tooltip_2": "to increase or decrease the speed of",
@@ -30,5 +35,6 @@
   "item.workings.auto_traffic_light.tooltip_4": "A redstone signal will stop auto-switching",
   "item.workings.traffic_light.tooltip": "A redstone signal will switch light",
   "block.workings.asphalt.tooltip": "Gives Speed II when standing on",
+
   "itemGroup.workings.general": "Workings Mod"
 }

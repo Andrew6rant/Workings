@@ -5,7 +5,8 @@ import io.github.Andrew6rant.workings.block.pipe.LargeRodBlock;
 import io.github.Andrew6rant.workings.block.pipe.MidRodBlock;
 import io.github.Andrew6rant.workings.block.pipe.PipeBlock;
 import io.github.Andrew6rant.workings.block.pipe.SmallRodBlock;
-import io.github.Andrew6rant.workings.block.sign.RoadSignBlock;
+import io.github.Andrew6rant.workings.block.sign.RoadSign;
+import io.github.Andrew6rant.workings.block.sign.WallSign;
 import io.github.Andrew6rant.workings.block.trafficlight.AutoTrafficLight;
 import io.github.Andrew6rant.workings.block.trafficlight.TrafficLight;
 import net.fabricmc.api.ModInitializer;
@@ -15,6 +16,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -32,6 +34,11 @@ public class Workings implements ModInitializer {
 	public static void registerBlock(String blockName, Block block) {
 		Registry.register(Registry.BLOCK, new Identifier("workings", blockName), block);
 		Registry.register(Registry.ITEM, new Identifier("workings", blockName), new BlockItem(block, new FabricItemSettings().group(Workings.ITEM_GROUP)));
+	}
+	public static void registerSign(String signName, Block sign, String wallSignName, Block wallSign) {
+		Registry.register(Registry.BLOCK, new Identifier("workings", signName), sign);
+		Registry.register(Registry.BLOCK, new Identifier("workings", wallSignName), wallSign);
+		Registry.register(Registry.ITEM, new Identifier("workings", signName), new WallStandingBlockItem(sign, wallSign, new Item.Settings().group(Workings.ITEM_GROUP)));
 	}
 	public static void registerFuel(Object blockOrItem, int value) {
 		FuelRegistry.INSTANCE.add((ItemConvertible) blockOrItem, value);
@@ -55,12 +62,14 @@ public class Workings implements ModInitializer {
 	public static final MidRodBlock COPPER_PIPE = new MidRodBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
 	public static final LargeRodBlock COPPER_PIPE_LARGE = new LargeRodBlock(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
 	public static final Item COPPER_NUGGET = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
-	public static final RoadSignBlock STOP_SIGN = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	//public static final WallSignBlock STOP_SIGN_WALL = new WallSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	// Wall Mounted Stop Sign disabled for now. I don't like that it is a separate block instead of a blockstate for the regular Stop Sign.
-	public static final RoadSignBlock DIAMOND_SIGN_CROSS = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final RoadSignBlock DIAMOND_SIGN_SHOVEL = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
-	public static final RoadSignBlock DIAMOND_SIGN_FLAG = new RoadSignBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f));
+	public static final RoadSign STOP_SIGN = new RoadSign(FabricBlockSettings.of(Material.METAL).strength(3.0f), ParticleTypes.ELECTRIC_SPARK);
+	public static final WallSign STOP_SIGN_WALL = new WallSign(FabricBlockSettings.of(Material.METAL).strength(3.0f).nonOpaque(), ParticleTypes.ELECTRIC_SPARK);
+	public static final RoadSign DIAMOND_SIGN_CROSS = new RoadSign(FabricBlockSettings.of(Material.METAL).strength(3.0f), ParticleTypes.ELECTRIC_SPARK);
+	public static final WallSign DIAMOND_SIGN_CROSS_WALL = new WallSign(FabricBlockSettings.of(Material.METAL).strength(3.0f).nonOpaque(), ParticleTypes.ELECTRIC_SPARK);
+	public static final RoadSign DIAMOND_SIGN_SHOVEL = new RoadSign(FabricBlockSettings.of(Material.METAL).strength(3.0f), ParticleTypes.ELECTRIC_SPARK);
+	public static final WallSign DIAMOND_SIGN_SHOVEL_WALL = new WallSign(FabricBlockSettings.of(Material.METAL).strength(3.0f).nonOpaque(), ParticleTypes.ELECTRIC_SPARK);
+	public static final RoadSign DIAMOND_SIGN_FLAG = new RoadSign(FabricBlockSettings.of(Material.METAL).strength(3.0f), ParticleTypes.ELECTRIC_SPARK);
+	public static final WallSign DIAMOND_SIGN_FLAG_WALL = new WallSign(FabricBlockSettings.of(Material.METAL).strength(3.0f).nonOpaque(), ParticleTypes.ELECTRIC_SPARK);
 
 	public static final Block PAVEMENT = new Block(FabricBlockSettings.copy(Blocks.STONE));
 	public static final AsphaltBlock ASPHALT = new AsphaltBlock(FabricBlockSettings.copy(Blocks.STONE));
@@ -85,10 +94,10 @@ public class Workings implements ModInitializer {
 		registerBlock(Names.COPPER_PIPE, COPPER_PIPE);
 		registerBlock(Names.COPPER_PIPE_LARGE, COPPER_PIPE_LARGE);
 		registerItem (Names.COPPER_NUGGET, COPPER_NUGGET);
-		registerBlock(Names.STOP_SIGN, STOP_SIGN);
-		registerBlock(Names.DIAMOND_SIGN_SHOVEL, DIAMOND_SIGN_SHOVEL);
-		registerBlock(Names.DIAMOND_SIGN_FLAG, DIAMOND_SIGN_FLAG);
-		registerBlock(Names.DIAMOND_SIGN_CROSS, DIAMOND_SIGN_CROSS);
+		registerSign(Names.STOP_SIGN, STOP_SIGN, Names.STOP_SIGN_WALL, STOP_SIGN_WALL);
+		registerSign(Names.DIAMOND_SIGN_SHOVEL, DIAMOND_SIGN_SHOVEL, Names.DIAMOND_SIGN_SHOVEL_WALL, DIAMOND_SIGN_SHOVEL_WALL);
+		registerSign(Names.DIAMOND_SIGN_FLAG, DIAMOND_SIGN_FLAG, Names.DIAMOND_SIGN_FLAG_WALL, DIAMOND_SIGN_FLAG_WALL);
+		registerSign(Names.DIAMOND_SIGN_CROSS, DIAMOND_SIGN_CROSS, Names.DIAMOND_SIGN_CROSS_WALL, DIAMOND_SIGN_CROSS_WALL);
 		registerBlock(Names.PAVEMENT, PAVEMENT);
 		registerBlock(Names.ASPHALT, ASPHALT);
 	}

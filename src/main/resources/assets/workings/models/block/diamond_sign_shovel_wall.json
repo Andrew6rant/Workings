@@ -1,0 +1,7 @@
+{
+	"parent": "workings:block/diamond_sign_wall_template",
+	"textures": {
+		"1": "workings:block/diamond_sign_shovel",
+		"particle": "workings:block/diamond_sign_shovel"
+	}
+}

@@ -20,9 +20,13 @@ public class Names {
     public static final String COPPER_PIPE_LARGE = "copper_pipe_large";
     public static final String COPPER_NUGGET = "copper_nugget";
     public static final String STOP_SIGN = "stop_sign";
+    public static final String STOP_SIGN_WALL = "stop_sign_wall";
     public static final String DIAMOND_SIGN_SHOVEL = "diamond_sign_shovel";
+    public static final String DIAMOND_SIGN_SHOVEL_WALL = "diamond_sign_shovel_wall";
     public static final String DIAMOND_SIGN_FLAG = "diamond_sign_flag";
+    public static final String DIAMOND_SIGN_FLAG_WALL = "diamond_sign_flag_wall";
     public static final String DIAMOND_SIGN_CROSS = "diamond_sign_cross";
+    public static final String DIAMOND_SIGN_CROSS_WALL = "diamond_sign_cross_wall";
     public static final String PAVEMENT = "pavement";
     public static final String ASPHALT = "asphalt";
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "workings:block/diamond_sign_cross_wall"
+    },
+    "facing=north": {
+      "model": "workings:block/diamond_sign_cross_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "workings:block/diamond_sign_cross_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "workings:block/diamond_sign_cross_wall",
+      "y": 180
+    }
+  }
+}
