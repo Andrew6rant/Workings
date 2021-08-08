@@ -15,6 +15,33 @@
       {
         "model": "workings:block/asphalt",
         "y": 270
+      },
+      {
+        "model": "workings:block/asphalt",
+        "x": 90
+      },
+      {
+        "model": "workings:block/asphalt",
+        "x": 180
+      },
+      {
+        "model": "workings:block/asphalt",
+        "x": 270
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 90,
+        "x": 90
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 180,
+        "x": 180
+      },
+      {
+        "model": "workings:block/asphalt",
+        "y": 270,
+        "x": 270
       }
     ]
   }
