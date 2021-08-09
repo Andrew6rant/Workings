@@ -2,7 +2,7 @@
 	"parent": "workings:block/diamond_sign_on_wall_template",
 	"textures": {
 		"1": "workings:block/diamond_sign_flag",
-		"3": "workings:block/diamond_sign_flag_on",
+		"3": "workings:block/diamond_sign_lights",
 		"particle": "workings:block/diamond_sign_flag"
 	}
 }

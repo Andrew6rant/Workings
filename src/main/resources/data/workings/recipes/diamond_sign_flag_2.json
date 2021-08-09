@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "tag": "minecraft:banners"
+      "item": "workings:flag"
     },
     "I": {
       "item": "minecraft:iron_nugget"

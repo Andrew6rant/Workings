@@ -81,7 +81,7 @@ public class Workings implements ModInitializer {
 		registerBlock(Names.BLOCK_OF_STICKS, BLOCK_OF_STICKS);		registerFuel(BLOCK_OF_STICKS, 3000);
 		registerItem (Names.BUNDLE_OF_STICKS, BUNDLE_OF_STICKS);	registerFuel(BUNDLE_OF_STICKS, 1000);
 		registerBlock(Names.PALLET, PALLET);						registerFuel(PALLET, 250);
-		registerItem (Names.FLAG, FLAG);							registerFuel(FLAG, 60);
+		registerItem (Names.FLAG, FLAG);							registerFuel(FLAG, 30);
 		registerBlock(Names.JERSEY_WALL, JERSEY_WALL);
 		registerBlock(Names.HIGHWAY_WALL, HIGHWAY_WALL);
 		registerBlock(Names.TRAFFIC_POLE, TRAFFIC_POLE);
