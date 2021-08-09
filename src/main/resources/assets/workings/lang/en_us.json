@@ -1,6 +1,4 @@
 {
-  "item.workings.bundle_of_sticks": "Bundle of Sticks",
-  "item.workings.copper_nugget": "Copper Nugget",
   "block.workings.block_of_sticks": "Block of Sticks",
   "block.workings.pavement": "Pavement",
   "block.workings.asphalt": "Asphalt",
@@ -27,6 +25,10 @@
   "block.workings.diamond_sign_shovel_wall": "Wall Mounted Diamond Sign (Shovel)",
   "block.workings.diamond_sign_flag_wall": "Wall Mounted Diamond Sign (Flag)",
   "block.workings.diamond_sign_cross_wall": "Wall Mounted Diamond Sign (Cross)",
+
+  "item.workings.bundle_of_sticks": "Bundle of Sticks",
+  "item.workings.copper_nugget": "Copper Nugget",
+  "item.workings.flag": "Flag",
 
   "item.workings.pipe.tooltip": "Can be used as a lightning rod",
   "item.workings.auto_traffic_light.tooltip_1": "Use sugar or fermented spider eyes",

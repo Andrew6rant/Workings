@@ -2,8 +2,7 @@
 	"credit": "Andrew Grant, Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"2": "workings:block/asphalt",
-		"particle": "workings:block/diamond_sign_lights"
+		"2": "workings:block/asphalt"
 	},
 	"elements": [
 		{
@@ -65,6 +64,24 @@
 				"north": {"uv": [1, 1, 15, 15], "texture": "#1"},
 				"south": {"uv": [1, 1, 15, 15], "texture": "#1"}
 			}
+		},
+		{
+			"from": [3.35, 2.2, 6.4],
+			"to": [12.35, 13.5, 9.6],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [4, 3, 12, 13], "texture": "#3"},
+				"south": {"uv": [4, 3, 12, 13], "texture": "#3"}
+			}
+		},
+		{
+			"from": [2.2, 3.35, 6.4],
+			"to": [13.5, 12.35, 9.6],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [3, 4, 13, 12], "texture": "#3"},
+				"south": {"uv": [3, 4, 13, 12], "texture": "#3"}
+			}
 		}
 	],
 	"display": {},
@@ -74,5 +91,5 @@
 			"origin": [0, 0, 0],
 			"color": 0,
 			"children": [0, 1, 2, 3]
-		}, 4]
+		}, 4, 5, 6]
 }

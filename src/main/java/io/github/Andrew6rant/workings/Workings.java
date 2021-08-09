@@ -13,6 +13,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.*;
 import net.minecraft.item.*;
@@ -46,9 +47,10 @@ public class Workings implements ModInitializer {
 
 	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).sounds(BlockSoundGroup.WOOD));
 	public static final Item BUNDLE_OF_STICKS = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
+	public static final Item FLAG = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
 	public static final Pallet PALLET = new Pallet(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
-	public static final FenceBlock JERSEY_WALL = new FenceBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
-	public static final FenceBlock HIGHWAY_WALL = new FenceBlock(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
+	public static final RoadWall JERSEY_WALL = new RoadWall(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
+	public static final RoadWall HIGHWAY_WALL = new RoadWall(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
 	public static final ConeBlock TRAFFIC_POLE = new ConeBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final DrumBlock TRAFFIC_DRUM = new DrumBlock(FabricBlockSettings.of(Material.DECORATION).strength(1.0f));
 	public static final TrafficLight TRAFFIC_LIGHT = new TrafficLight(FabricBlockSettings.of(Material.DECORATION).strength(1.0f).emissiveLighting((state, world, pos) -> true).luminance(15));
@@ -76,9 +78,10 @@ public class Workings implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		registerBlock(Names.BLOCK_OF_STICKS, BLOCK_OF_STICKS);   registerFuel(BLOCK_OF_STICKS, 3000);
-		registerItem (Names.BUNDLE_OF_STICKS, BUNDLE_OF_STICKS); registerFuel(BUNDLE_OF_STICKS, 1000);
-		registerBlock(Names.PALLET, PALLET);                     registerFuel(PALLET, 250);
+		registerBlock(Names.BLOCK_OF_STICKS, BLOCK_OF_STICKS);		registerFuel(BLOCK_OF_STICKS, 3000);
+		registerItem (Names.BUNDLE_OF_STICKS, BUNDLE_OF_STICKS);	registerFuel(BUNDLE_OF_STICKS, 1000);
+		registerBlock(Names.PALLET, PALLET);						registerFuel(PALLET, 250);
+		registerItem (Names.FLAG, FLAG);							registerFuel(FLAG, 60);
 		registerBlock(Names.JERSEY_WALL, JERSEY_WALL);
 		registerBlock(Names.HIGHWAY_WALL, HIGHWAY_WALL);
 		registerBlock(Names.TRAFFIC_POLE, TRAFFIC_POLE);
@@ -100,5 +103,8 @@ public class Workings implements ModInitializer {
 		registerSign(Names.DIAMOND_SIGN_CROSS, DIAMOND_SIGN_CROSS, Names.DIAMOND_SIGN_CROSS_WALL, DIAMOND_SIGN_CROSS_WALL);
 		registerBlock(Names.PAVEMENT, PAVEMENT);
 		registerBlock(Names.ASPHALT, ASPHALT);
+
+		FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
+		flammableRegistry.add(BLOCK_OF_STICKS, 60, 100);
 	}
 }

@@ -44,6 +44,23 @@
         "uvlock": true,
         "y": 270
       }
+    },
+    {
+      "when": {
+        "flag": "1"
+      },
+      "apply": {
+        "model": "workings:block/flag_attached"
+      }
+    },
+    {
+      "when": {
+        "flag": "2"
+      },
+      "apply": {
+        "model": "workings:block/flag_attached",
+        "y": 90
+      }
     }
   ]
 }

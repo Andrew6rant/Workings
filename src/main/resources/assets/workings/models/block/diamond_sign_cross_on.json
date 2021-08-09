@@ -1,0 +1,8 @@
+{
+	"parent": "workings:block/diamond_sign_template_on",
+	"textures": {
+		"1": "workings:block/diamond_sign_cross",
+		"3": "workings:block/diamond_sign_lights",
+		"particle": "workings:block/diamond_sign_cross"
+	}
+}

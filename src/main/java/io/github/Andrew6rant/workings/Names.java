@@ -4,6 +4,7 @@ public class Names {
     public static final String BLOCK_OF_STICKS = "block_of_sticks";
     public static final String BUNDLE_OF_STICKS = "bundle_of_sticks";
     public static final String PALLET = "pallet";
+    public static final String FLAG = "flag";
     public static final String JERSEY_WALL = "jersey_wall";
     public static final String HIGHWAY_WALL = "highway_wall";
     public static final String TRAFFIC_POLE = "traffic_pole";

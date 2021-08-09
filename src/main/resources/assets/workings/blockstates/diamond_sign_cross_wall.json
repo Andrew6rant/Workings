@@ -1,19 +1,13 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "workings:block/diamond_sign_cross_wall"
-    },
-    "facing=north": {
-      "model": "workings:block/diamond_sign_cross_wall",
-      "y": 270
-    },
-    "facing=south": {
-      "model": "workings:block/diamond_sign_cross_wall",
-      "y": 90
-    },
-    "facing=west": {
-      "model": "workings:block/diamond_sign_cross_wall",
-      "y": 180
-    }
+    "facing=north,lit=false": { "model": "workings:block/diamond_sign_cross_wall" },
+    "facing=east,lit=false":  { "model": "workings:block/diamond_sign_cross_wall", "y":  90},
+    "facing=south,lit=false": { "model": "workings:block/diamond_sign_cross_wall", "y": 180 },
+    "facing=west,lit=false":  { "model": "workings:block/diamond_sign_cross_wall", "y": 270 },
+
+    "facing=north,lit=true": { "model": "workings:block/diamond_sign_cross_on" },
+    "facing=east,lit=true":  { "model": "workings:block/diamond_sign_cross_on", "y":  90},
+    "facing=south,lit=true": { "model": "workings:block/diamond_sign_cross_on", "y": 180 },
+    "facing=west,lit=true":  { "model": "workings:block/diamond_sign_cross_on", "y": 270 }
   }
 }

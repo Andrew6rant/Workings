@@ -1,19 +1,13 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "workings:block/stop_sign_wall"
-    },
-    "facing=north": {
-      "model": "workings:block/stop_sign_wall",
-      "y": 270
-    },
-    "facing=south": {
-      "model": "workings:block/stop_sign_wall",
-      "y": 90
-    },
-    "facing=west": {
-      "model": "workings:block/stop_sign_wall",
-      "y": 180
-    }
+    "facing=north,lit=false": { "model": "workings:block/stop_sign_wall" },
+    "facing=east,lit=false":  { "model": "workings:block/stop_sign_wall", "y":  90},
+    "facing=south,lit=false": { "model": "workings:block/stop_sign_wall", "y": 180 },
+    "facing=west,lit=false":  { "model": "workings:block/stop_sign_wall", "y": 270 },
+
+    "facing=north,lit=true": { "model": "workings:block/stop_sign_on_wall" },
+    "facing=east,lit=true":  { "model": "workings:block/stop_sign_on_wall", "y":  90},
+    "facing=south,lit=true": { "model": "workings:block/stop_sign_on_wall", "y": 180 },
+    "facing=west,lit=true":  { "model": "workings:block/stop_sign_on_wall", "y": 270 }
   }
 }

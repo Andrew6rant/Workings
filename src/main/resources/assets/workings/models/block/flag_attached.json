@@ -1,0 +1,17 @@
+{
+	"credit": "Andrew Grant, Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"1": "workings:block/flag_attached"
+	},
+	"elements": [
+		{
+			"from": [6.5, 16, 8],
+			"to": [9.5, 19, 8],
+			"faces": {
+				"north": {"uv": [1, 1, 4, 4], "texture": "#1"},
+				"south": {"uv": [1, 1, 4, 4], "texture": "#1"}
+			}
+		}
+	]
+}
