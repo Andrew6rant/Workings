@@ -9,6 +9,7 @@ import io.github.Andrew6rant.workings.block.sign.RoadSign;
 import io.github.Andrew6rant.workings.block.sign.WallSign;
 import io.github.Andrew6rant.workings.block.trafficlight.AutoTrafficLight;
 import io.github.Andrew6rant.workings.block.trafficlight.TrafficLight;
+import io.github.Andrew6rant.workings.item.FlagItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -47,7 +48,7 @@ public class Workings implements ModInitializer {
 
 	public static final PillarBlock BLOCK_OF_STICKS = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).sounds(BlockSoundGroup.WOOD));
 	public static final Item BUNDLE_OF_STICKS = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
-	public static final Item FLAG = new Item(new Item.Settings().group(Workings.ITEM_GROUP));
+	public static final FlagItem FLAG = new FlagItem(new Item.Settings().group(Workings.ITEM_GROUP));
 	public static final Pallet PALLET = new Pallet(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
 	public static final RoadWall JERSEY_WALL = new RoadWall(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
 	public static final RoadWall HIGHWAY_WALL = new RoadWall(FabricBlockSettings.copy(Blocks.SMOOTH_STONE));
@@ -81,8 +82,7 @@ public class Workings implements ModInitializer {
 		registerBlock(Names.BLOCK_OF_STICKS, BLOCK_OF_STICKS);		registerFuel(BLOCK_OF_STICKS, 3000);
 		registerItem (Names.BUNDLE_OF_STICKS, BUNDLE_OF_STICKS);	registerFuel(BUNDLE_OF_STICKS, 1000);
 		registerBlock(Names.PALLET, PALLET);						registerFuel(PALLET, 250);
-		registerItem (Names.FLAG, FLAG);							registerFuel(FLAG, 30);
-		registerBlock(Names.JERSEY_WALL, JERSEY_WALL);
+		registerBlock(Names.JERSEY_WALL, JERSEY_WALL);				registerFuel(FLAG, 30);
 		registerBlock(Names.HIGHWAY_WALL, HIGHWAY_WALL);
 		registerBlock(Names.TRAFFIC_POLE, TRAFFIC_POLE);
 		registerBlock(Names.TRAFFIC_DRUM, TRAFFIC_DRUM);
@@ -103,6 +103,7 @@ public class Workings implements ModInitializer {
 		registerSign(Names.DIAMOND_SIGN_CROSS, DIAMOND_SIGN_CROSS, Names.DIAMOND_SIGN_CROSS_WALL, DIAMOND_SIGN_CROSS_WALL);
 		registerBlock(Names.PAVEMENT, PAVEMENT);
 		registerBlock(Names.ASPHALT, ASPHALT);
+		registerItem (Names.FLAG, FLAG);
 
 		FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
 		flammableRegistry.add(BLOCK_OF_STICKS, 60, 100);

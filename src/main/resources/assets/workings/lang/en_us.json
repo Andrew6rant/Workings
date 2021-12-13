@@ -36,7 +36,9 @@
   "item.workings.auto_traffic_light.tooltip_3": "the light switching by 20% each time",
   "item.workings.auto_traffic_light.tooltip_4": "A redstone signal will stop auto-switching",
   "item.workings.traffic_light.tooltip": "A redstone signal will switch light",
-  "block.workings.asphalt.tooltip": "Gives Speed II when standing on",
+  "item.workings.flag.tooltip": "Can be placed on Highway Barriers and Jersey Walls",
+  "block.workings.asphalt.tooltip": "Gives Speed II when stood on",
+
 
   "itemGroup.workings.general": "Workings Mod"
 }
