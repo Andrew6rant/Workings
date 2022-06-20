@@ -35,10 +35,7 @@ public class AutoTrafficLight extends TrafficLight {
     }
     @Override
     public void appendTooltip(ItemStack itemStack, BlockView blockView, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_1").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_2").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_3").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip_4").formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.workings.auto_traffic_light.tooltip").formatted(Formatting.GRAY));
     }
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit){

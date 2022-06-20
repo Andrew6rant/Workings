@@ -31,10 +31,7 @@
   "item.workings.flag": "Flag",
 
   "item.workings.pipe.tooltip": "Can be used as a lightning rod",
-  "item.workings.auto_traffic_light.tooltip_1": "Use sugar or fermented spider eyes",
-  "item.workings.auto_traffic_light.tooltip_2": "to increase or decrease the speed of",
-  "item.workings.auto_traffic_light.tooltip_3": "the light switching by 20% each time",
-  "item.workings.auto_traffic_light.tooltip_4": "A redstone signal will stop auto-switching",
+  "item.workings.auto_traffic_light.tooltip": "Use sugar or fermented spider eyes \nto increase or decrease the speed of \nthe light switching by 20% each time \nA redstone signal will stop auto-switching",
   "item.workings.traffic_light.tooltip": "A redstone signal will switch light",
   "item.workings.flag.tooltip": "Can be placed on Highway Barriers and Jersey Walls",
   "block.workings.asphalt.tooltip": "Gives Speed II when stood on",
