@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "workings:jersey_wall",
+    "workings:highway_wall",
+    "workings:traffic_drum",
+    "workings:traffic_pole",
+    "workings:traffic_light",
+    "workings:traffic_light_auto",
+    "workings:blocks_of_pipes",
+    "workings:iron_pipe_small",
+    "workings:iron_pipe",
+    "workings:iron_pipe_large",
+    "workings:blocks_of_copper_pipes",
+    "workings:copper_pipe_small",
+    "workings:copper_pipe",
+    "workings:copper_pipe_large",
+    "workings:stop_sign",
+    "workings:stop_sign_wall",
+    "workings:diamond_sign_shovel",
+    "workings:diamond_sign_shovel_wall",
+    "workings:diamond_sign_flag",
+    "workings:diamond_sign_flag_wall",
+    "workings:diamond_sign_cross",
+    "workings:diamond_sign_cross_wall",
+    "workings:pavement",
+    "workings:asphalt"
+  ]
+}

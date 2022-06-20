@@ -1,6 +1,7 @@
 package io.github.Andrew6rant.workings.block.sign;
 
 import net.minecraft.block.*;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.world.ServerWorld;
@@ -37,7 +38,7 @@ public class RoadSign extends TorchBlock {
             boolean bl = state.get(LIT);
             if (bl != world.isReceivingRedstonePower(pos)) {
                 if (bl) {
-                    world.getBlockTickScheduler().schedule(pos, this, 4);
+                    world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
                 } else {
                     world.setBlockState(pos, state.cycle(LIT), 2);
                 }

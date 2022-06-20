@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.WallTorchBlock;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.world.ServerWorld;
@@ -50,7 +51,7 @@ public class WallSign extends WallTorchBlock {
             boolean bl = state.get(LIT);
             if (bl != world.isReceivingRedstonePower(pos)) {
                 if (bl) {
-                    world.getBlockTickScheduler().schedule(pos, this, 4);
+                    world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
                 } else {
                     world.setBlockState(pos, state.cycle(LIT), 2);
                 }
